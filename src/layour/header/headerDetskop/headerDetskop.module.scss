@@ -1,0 +1,264 @@
+.header_container,
+.header_mobile_container {
+    width: 100%;
+    position: absolute;
+    z-index: 155;
+    transition: all 0.3s ease-in-out;
+}
+
+.header_container:hover {
+    background: #1b1b1b;
+    transition-duration: .5s;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(27, 27, 27, 0.85); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 200;
+    transform: translateY(-20px);
+    animation: slideDown 1.5s forwards ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-60px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    height: 100px;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+}
+
+.header_logo {
+    font-weight: bold;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 150px;
+    height: auto; 
+    max-width: 100%;
+}
+
+.header_left {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.header_left_item {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.header_right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1; 
+    justify-content: flex-end;
+}
+
+.header_right_icon {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.header_barIcon {
+    display: none;
+    color: #2DF828;
+    font-size: 20px; 
+}
+
+.header_mobile_container {
+    display: none;
+    background: transparent;
+    background: rgba(27, 27, 27, 0.85); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    height: 80px;
+}
+
+.header_mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.header_mobile_title {
+    font-size: 20px;
+}
+
+.header_mobile_right {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 5%;
+    gap: 10px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%); 
+    z-index: 1000;
+    background-color: #1B1B1B;
+  }
+
+  .sideBar_head{
+    background-color: #1B1B1B;
+  }
+
+  .sideBar_head_closeIcon{
+    color: #2DF828;
+    cursor: pointer;
+    font-size: 20px ;
+  }
+
+  .sideBar_head_li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .sideBar_bottom,
+  .sidebar_social{
+    background-color: #222222;
+    width: 100%;
+  }
+
+  .sideBar_bottom{
+    position: absolute;
+    bottom: 7%;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+  }
+  
+  .sidebar li {
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+  }
+  
+  .sidebar li:hover {
+    background-color: #444;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0); 
+  }
+
+  .close_button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .sideBar_login{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0 20px 10px;
+    width: 100%;
+  }
+
+  .sideBar_login_icon{
+    font-size: 20px;
+  }
+
+  .sidebar_social{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    padding: 20px 0 20px 10px;
+    position: absolute;
+    border-top: 1px solid #444;
+  }
+
+  .header_mobile_container.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(27, 27, 27, 0.85); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 200;
+    transform: translateY(0); /* Burada -20px yox, 0 olsun */
+}
+
+
+@media screen and (min-width: 1080px) {
+    .header_logo{
+    left: 60%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .header_logo{
+    left: 70%;
+    }
+}
+
+@media screen and (max-width: 968px) {
+    .header {
+        display: none;
+    }
+
+    .header_mobile_container {
+        display: block;
+    }
+
+    .header_mobile{
+        height: 140px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-top: -40px;
+    }
+
+    .header_barIcon {
+        display: block;
+    }
+
+    .header_logo{
+        left: 20%;
+    }
+
+    .sidebar{
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .header_logo{
+        left: 30%;
+    }
+}

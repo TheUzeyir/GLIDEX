@@ -1,0 +1,123 @@
+.slideContentTextbox {
+    position: absolute;
+    bottom: 10%; /* Bu hissəni əlavə etdik, fotonun altında yerləşməsi üçün */
+    left: 2%;
+    color: white;
+    width: 40%;
+    transform: translateY(0); /* Bu əlavə, alt hissəyə doğru hərəkət etməsini təmin edir */
+}
+
+.slideContentTextbox_title {
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 56.4px;
+    margin-top: 20px; /* `top` əvəzinə, daha uyğun margin istifadə olundu */
+}
+
+.slideContentTextbox_subTitle {
+    font-size: 14px;
+    color: #c1c1c1;
+    margin-top: 10px;
+}
+
+.slideContentTextbox_Btn {
+    border-radius: 26px;
+    padding: 15px 30px;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+.slideContentTextbox_item {
+    color: gray;
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 22px;
+    position: relative;
+    bottom: 0; /* Fotonun alt hissəsində yerləşməsi üçün dəyişiklik */
+}
+
+.slideContentTextbox_img {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    left: 120%;
+    top: 70%; /* Bu hissəni azaltmaq, fotonun altına yaxınlaşdırmaq üçün */
+}
+
+.slideContentImg {
+    width: 100%;
+    height: 800px;
+}
+
+.progresscontainer {
+    position: relative;
+    width: 120%;
+    height: 3px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px; /* Progress bar'ın yeri */
+}
+
+.progressbar {
+    height: 100%;
+    background-color: #2cff28ca;
+    transition: width 0.1s linear;
+}
+
+.timer {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+}
+
+.swiperContent{
+    display: none;
+    color: white;
+    padding:20px;
+}
+
+.swiperContent_title{
+    font-size: 33px;
+    font-weight: bold;
+    line-height: 38.22px;
+    margin-top: 20px;
+}
+
+.swiperContent_subTitle{
+    margin-top: 20px;
+    color: #c1c1c1;
+}
+
+.swiperContent_btn{
+    border-radius: 26px;
+    padding: 15px 30px;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 968px) {
+    .slideContentImg {
+        height: 350px;
+    }
+
+    .slideContentTextbox_title,
+    .slideContentTextbox_subTitle,
+    .slideContentTextbox_item,
+    .slideContentTextbox_Btn,
+    .slideContentTextbox_img{
+        display: none;
+    }
+
+    .progresscontainer{
+        bottom: -35px;
+        width: 250%;
+        left: -11px;
+        border-radius: 0;
+    }
+    .swiperContent{
+        display: block;
+    }
+}

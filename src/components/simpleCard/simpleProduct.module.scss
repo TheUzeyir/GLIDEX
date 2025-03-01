@@ -1,0 +1,33 @@
+.simpleProduct{
+    color: white;
+    text-align: center;
+    margin: 40px 0 40px 0;
+}
+
+.simpleProduct_title{
+    font-size: 42px;
+    line-height: 54.6px;
+}
+
+.simpleProduct_subtitle{
+    color: gray;
+    font-size: 17px;
+    margin: 5px 0 40px 0;
+}
+
+.simpleProduct_img{
+    width: 100%;
+}
+
+@media screen and (max-width: 968px){
+    .simpleProduct_title{
+        font-size: 32px;
+        line-height: 42.6px;
+    }
+
+    .simpleProduct_img{
+        height: 350px;
+        object-fit: cover;
+    }
+    
+}
