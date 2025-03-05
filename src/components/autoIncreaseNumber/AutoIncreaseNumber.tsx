@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { animate } from "motion";
 import style from "./autoIncreaseNumber.module.css";
 
@@ -18,7 +18,7 @@ const AutoIncreaseNumber = () => {
       (entries) => {
         if (entries[0].isIntersecting) {
           setStartAnimation(true);
-          observer.disconnect(); // Animasiya başladıqdan sonra müşahidəni dayandırır
+          observer.disconnect(); 
         }
       },
       { threshold: 0.5 }
@@ -56,8 +56,10 @@ const AutoIncreaseNumber = () => {
   );
 };
 
-const Counter = ({ amount, duration, text, desc, start }) => {
-  const countRef = useRef(null);
+const Counter = ({ amount, duration, text, desc, start }: 
+  { amount: number; duration: number; text: string; desc: string; start: boolean }) => {
+  
+  const countRef = useRef<HTMLParagraphElement | null>(null);
 
   useEffect(() => {
     if (start) {
@@ -66,7 +68,7 @@ const Counter = ({ amount, duration, text, desc, start }) => {
         ease: "circOut",
         onUpdate: (latest) => {
           if (countRef.current) {
-            countRef.current.innerHTML = Math.round(latest);
+            countRef.current.textContent = Math.round(latest).toString();
           }
         },
       });
@@ -76,14 +78,13 @@ const Counter = ({ amount, duration, text, desc, start }) => {
   return (
     <div className={style.counterItem}>
       <div className={style.counterItemBox}>
-        <p ref={countRef} className={style.nonwigglycountups}>
-          0
-        </p>
+        <p ref={countRef} className={style.nonwigglycountups}>0</p>
         <span className={style.countertext}>{text}</span>
       </div>
       <p className={style.counterItem_title}>{desc}</p>
     </div>
   );
 };
+
 
 export default AutoIncreaseNumber;

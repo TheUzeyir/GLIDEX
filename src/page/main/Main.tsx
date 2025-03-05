@@ -25,7 +25,7 @@ const Main = () => {
 
   return (
     <div>
-      {/* <div className="mainCard">
+      <div className="mainCard">
         <HeaderDetskop/>
       </div>
       <div className="mainCard">
@@ -49,16 +49,16 @@ const Main = () => {
       </div>
       <div className="mainCard" data-aos="zoom-in">
         <CountdownTimer/>
-      </div> */}
+      </div>
       <div className="mainCard" data-aos="zoom-in">
         <Autoplayprogress/>
       </div>
-      {/* <div className="mainCard" data-aos="zoom-in">
+      <div className="mainCard" data-aos="zoom-in">
         <Footer/>
       </div>
       <div className="mainCard" data-aos="zoom-in">
         <FooterResponsive />
-      </div> */}
+      </div>
     </div>
   );
 };

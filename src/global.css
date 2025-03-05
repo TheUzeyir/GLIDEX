@@ -35,6 +35,53 @@ ul,li{
     opacity: 1; 
 }
 
+.slider-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .custom-arrow {
+    position: absolute;
+    bottom: -40px; /* Oxları aşağıya çəkir */
+    width: 30px;
+    height: 30px;
+    background-color: #ff6600;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .custom-prev {
+    left: 45%;
+  }
+  
+  .custom-next {
+    right: 45%;
+  }
+  
+  .custom-arrow::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .custom-prev::before {
+    transform: rotate(135deg);
+  }
+  
+  .custom-next::before {
+    transform: rotate(-45deg);
+  }
+  
+
 @media screen and (max-width: 768px){
     .container{
         margin: 0 20px;

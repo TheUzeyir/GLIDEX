@@ -1,4 +1,3 @@
-import React from 'react'
 import style from './simpleProduct.module.css'
 
 const SimpleProduct = () => {

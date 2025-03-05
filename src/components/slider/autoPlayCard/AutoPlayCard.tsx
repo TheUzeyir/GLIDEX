@@ -1,14 +1,14 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperType } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
-import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import style from "./autoPlay.module.css";
 
 const AutoPlayCard = () => {
-    const progressContent = useRef([]);
     const [activeIndex, setActiveIndex] = useState(0);
     const [progress, setProgress] = useState(0);
 
@@ -26,10 +26,10 @@ const AutoPlayCard = () => {
         return () => clearInterval(interval);
     }, [activeIndex]);
 
-    const onSlideChange = (swiper) => {
+    const onSlideChange = (swiper: SwiperType) => {
         setActiveIndex(swiper.activeIndex);
-        setProgress(0); 
-    };
+        setProgress(0);
+    };    
 
     const data = [
         {
