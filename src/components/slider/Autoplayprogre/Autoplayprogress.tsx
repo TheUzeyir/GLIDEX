@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -7,6 +7,15 @@ import style from "./autoPlayProgress.module.css";
 
 export default function Autoplayprogress() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 968);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 968);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const data = [
     {
@@ -14,32 +23,32 @@ export default function Autoplayprogress() {
       title: "Swift Recharge",
       subtitle: "3-Hour Rapid Charging",
       id: "01",
-      boxText:"Anti theft measures",
-      desc:"Our Kick Back Scooter prioritizes security with GPS and remote locking"
+      boxText: "Anti theft measures",
+      desc: "Our Kick Back Scooter prioritizes security with GPS and remote locking"
     },
     {
       img: "https://greenshift-road.myshopify.com/cdn/shop/files/IMG_Sliders_2.jpg?v=1697881948&width=2000",
       title: "Ultra High Performance",
       subtitle: "0-40 KMPH İn 6.8 SEC**",
       id: "02",
-      boxText:"72 VOLT SCRAMBLER",
-      desc:"The 72 VOLT SCRAMBLER redefines power with 72V dominance"
+      boxText: "72 VOLT SCRAMBLER",
+      desc: "The 72 VOLT SCRAMBLER redefines power with 72V dominance"
     },
     {
       img: "https://greenshift-road.myshopify.com/cdn/shop/files/Mask_group_1.png?v=1695100646&width=2000",
       title: "Power Unleased",
       subtitle: "72V Dominance Astounding Power",
       id: "03",
-      boxText:"3 hours  fast charge",
-      desc:"Our Kick Back Scooter offers a swift 3-hour charge for rapid adventures"
+      boxText: "3 hours fast charge",
+      desc: "Our Kick Back Scooter offers a swift 3-hour charge for rapid adventures"
     },
     {
       img: "https://greenshift-road.myshopify.com/cdn/shop/files/IMG_Sliders_4.jpg?v=1697881949&width=2000",
       title: "Advanted Security",
       subtitle: "Secure with Remote Locking",
       id: "04",
-      boxText:"26 MPH speed",
-      desc:"With a maximum velocity of 26 MPH, this smooth and strong bike will make them hurdle through the roads quickly"
+      boxText: "26 MPH speed",
+      desc: "With a maximum velocity of 26 MPH, this smooth and strong bike will make them hurdle through the roads quickly"
     },
   ];
 
@@ -76,19 +85,37 @@ export default function Autoplayprogress() {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <div className={style.slideContentBox}>
-        {data.map((item, index) => (
-          <div
-            className={`${style.slideTextBoxs} ${activeIndex === index ? style.activeSlide : ""}`}
-            key={index}
-          >
-            <h2 className={style.slideTitles}>{item.boxText}</h2>
-            <p className={style.slideContents}>{item.desc}</p>
-            <p className={`${style.slideId} ${activeIndex === index ? style.activeId : ""}`}>
-              {item.id}
-            </p>
-          </div>
-        ))}
+        {isMobile
+          ? groupedData[Math.floor(activeIndex / 2)].map((item, index) => (
+              <div
+                className={`${style.slideTextBoxs} ${
+                  activeIndex % 2 === index ? style.activeSlide : ""
+                }`}
+                key={index}
+              >
+                <h2 className={style.slideTitles}>{item.boxText}</h2>
+                <p className={style.slideContents}>{item.desc}</p>
+                <p className={`${style.slideId} ${activeIndex % 2 === index ? style.activeId : ""}`}>
+                  {item.id}
+                </p>
+              </div>
+            ))
+          : data.map((item, index) => (
+              <div
+                className={`${style.slideTextBoxs} ${
+                  activeIndex === index ? style.activeSlide : ""
+                }`}
+                key={index}
+              >
+                <h2 className={style.slideTitles}>{item.boxText}</h2>
+                <p className={style.slideContents}>{item.desc}</p>
+                <p className={`${style.slideId} ${activeIndex === index ? style.activeId : ""}`}>
+                  {item.id}
+                </p>
+              </div>
+            ))}
       </div>
     </div>
   );

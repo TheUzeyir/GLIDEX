@@ -84,14 +84,8 @@
 @media screen and (max-width: 968px) {
   .slideContentBox {
     display: flex;
-    overflow: hidden;
-    white-space: nowrap;
     width: 100%;
-    justify-content: center;
-  }
-  .slideContentBox > div {
-    flex: 0 0 50%;
-    transition: transform 0.5s ease-in-out;
+    padding: 20px;
   }
   .slideTextBoxs {
     border-left: none;
@@ -102,13 +96,14 @@
   .slideTitles {
     font-size: 18px;
     padding-top: 20px;
+    height: 70px;
   }
   .slideContents {
     font-size: 14px;
-    margin-top: 10px;
+    margin-top: 0px;
+    width: 100%;
   }
   .slideId {
-    font-size: 25px;
     margin-top: 20px;
   }
 }/*# sourceMappingURL=autoPlayProgress.module.css.map */
