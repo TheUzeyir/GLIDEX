@@ -11,6 +11,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import SimpleProductCardInfo from "../../components/simpleProductCardInfo/SimpleProductCardInfo";
 import CountdownTimer from "../../components/countDownTimer/CountdownTimer";
+import ScrollToTop from "../../components/scrollTop/ScrollToTop";
+import Autoplayprogress from "../../components/slider/Autoplayprogre/Autoplayprogress";
 
 const Main = () => {
   useEffect(() => {
@@ -23,36 +25,40 @@ const Main = () => {
 
   return (
     <div>
-      <div className="mainCard">
+      {/* <div className="mainCard">
         <HeaderDetskop/>
       </div>
       <div className="mainCard">
         <HeaderResponsive/>
       </div>
-      <div className="mainCard" data-aos="fade-up">
-        <AutoPlayCard data-aos="fade-down"/>
+      <ScrollToTop/>
+      <div className="mainCard" data-aos="zoom-in">
+        <AutoPlayCard/>
       </div>
-      <div className="mainCard" data-aos="fade-up">
+      <div className="mainCard" data-aos="zoom-in">
         <SimpleProduct/>
       </div>
-      <div className="mainCard" data-aos="fade-down">
-        <AutoIncreaseNumber data-aos="fade-up"/>
+      <div className="mainCard" data-aos="zoom-in">
+        <AutoIncreaseNumber/>
       </div>
-      <div className="mainCard" data-aos="fade-down">
+      <div className="mainCard" data-aos="zoom-in">
         <AutoPlay/>
       </div>
-      <div className="mainCard" data-aos="fade-down">
-        <SimpleProductCardInfo data-aos="fade-out"/>
+      <div className="mainCard" data-aos="zoom-in">
+        <SimpleProductCardInfo/>
       </div>
-      <div className="mainCard" data-aos="fade-up">
+      <div className="mainCard" data-aos="zoom-in">
         <CountdownTimer/>
+      </div> */}
+      <div className="mainCard" data-aos="zoom-in">
+        <Autoplayprogress/>
       </div>
-      <div className="mainCard" data-aos="fade-down">
+      {/* <div className="mainCard" data-aos="zoom-in">
         <Footer/>
       </div>
-      <div className="mainCard" data-aos="fade-down">
+      <div className="mainCard" data-aos="zoom-in">
         <FooterResponsive />
-      </div>
+      </div> */}
     </div>
   );
 };
