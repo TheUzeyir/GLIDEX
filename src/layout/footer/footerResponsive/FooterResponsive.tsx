@@ -40,8 +40,8 @@ const FooterResponsive = () => {
           </div>
           <div className={`${style.footer_links} ${isAboutOpen ? style.open : ""}`}>
           <h3 className={style.footer_links_title} onClick={toggleAbout}>
-            About us <IoArrowDownCircleOutline className={style.footer_links_icon} />
-          </h3>
+            About us<IoArrowDownCircleOutline className={`${style.footer_links_icon} ${isAboutOpen ? style.footer_links_icon_rotate : ""}`} />
+            </h3>
           <ul>
             <li className={style.footer_link}>Our Story</li>
             <li className={style.footer_link}>Contact</li>
@@ -51,7 +51,8 @@ const FooterResponsive = () => {
         </div>
         <div className={`${style.footer_links} ${isCollectionsOpen ? style.open : ""}`}>
           <h3 className={style.footer_links_title} onClick={toggleCollections}>
-            Collections <IoArrowDownCircleOutline className={style.footer_links_icon} />
+            Collections <IoArrowDownCircleOutline className={`${style.footer_links_icon} ${isCollectionsOpen ? style.footer_links_icon_rotate : ""}`} />
+
           </h3>
           <ul>
             <li className={style.footer_link}>Adventure Gear</li>
@@ -60,7 +61,6 @@ const FooterResponsive = () => {
             <li className={style.footer_link}>Urban Rides</li>
           </ul>
         </div>
-
           <div className={style.footer_subscription}>
             <h3 className={style.footer_subscription_title}>Sign up for news & Updates</h3>
             <div className={style.footer_subscription_box}>

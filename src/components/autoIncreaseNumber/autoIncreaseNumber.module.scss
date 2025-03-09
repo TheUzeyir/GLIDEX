@@ -70,7 +70,9 @@
   }
 
   @media screen and (max-width: 968px) {
-
+    .mainContainer{
+      margin-bottom: 160px;
+    }
     .counterContainer{
       gap: 40px;
     }
@@ -98,7 +100,6 @@
   }
 
   @media screen and (max-width: 768px) {
-
     .nonwigglycountups,
     .countertext{
       font-size: 40px;

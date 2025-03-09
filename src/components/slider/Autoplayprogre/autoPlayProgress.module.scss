@@ -31,6 +31,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  margin:0 40px;
 }
 
 .slideTextBoxs {
@@ -87,6 +88,7 @@
     display: flex;
     width: 100%;
     padding:20px;
+    margin:0;
   }
 
   .slideTextBoxs {

@@ -1,18 +1,17 @@
-@charset "UTF-8";
 .slideContentTextbox {
   position: absolute;
-  bottom: 10%; /* Bu hissəni əlavə etdik, fotonun altında yerləşməsi üçün */
+  bottom: 10%;
   left: 2%;
   color: white;
   width: 40%;
-  transform: translateY(0); /* Bu əlavə, alt hissəyə doğru hərəkət etməsini təmin edir */
+  transform: translateY(0);
 }
 
 .slideContentTextbox_title {
   font-size: 42px;
   font-weight: bold;
   line-height: 56.4px;
-  margin-top: 20px; /* `top` əvəzinə, daha uyğun margin istifadə olundu */
+  margin-top: 20px;
 }
 
 .slideContentTextbox_subTitle {
@@ -34,7 +33,7 @@
   font-weight: bold;
   font-size: 22px;
   position: relative;
-  bottom: 0; /* Fotonun alt hissəsində yerləşməsi üçün dəyişiklik */
+  bottom: 0;
 }
 
 .slideContentTextbox_img {
@@ -42,7 +41,7 @@
   height: 150px;
   position: relative;
   left: 120%;
-  top: 70%; /* Bu hissəni azaltmaq, fotonun altına yaxınlaşdırmaq üçün */
+  top: 70%;
 }
 
 .slideContentImg {
@@ -53,16 +52,16 @@
 .progresscontainer {
   position: relative;
   width: 120%;
-  height: 3px;
+  height: 2.5px;
   background-color: #e0e0e0;
   border-radius: 5px;
   overflow: hidden;
-  margin-top: 20px; /* Progress bar'ın yeri */
+  margin-top: 20px;
 }
 
 .progressbar {
   height: 100%;
-  background-color: rgba(44, 255, 40, 0.7921568627);
+  background-color: #2dff28;
   transition: width 0.1s linear;
 }
 

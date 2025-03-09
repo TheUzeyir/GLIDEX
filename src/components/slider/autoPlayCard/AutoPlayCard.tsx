@@ -17,9 +17,9 @@ const AutoPlayCard = () => {
             setProgress(prev => {
                 if (prev >= 100) {
                     clearInterval(interval);
-                    return 100; // Keep it at 100% after completion
+                    return 100;
                 }
-                return prev + (100 / 50); // Increase progress every 100ms (2 seconds total)
+                return prev + (100 / 50); 
             });
         }, 100);
 

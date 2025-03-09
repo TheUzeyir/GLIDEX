@@ -43,7 +43,7 @@ ul,li{
   
   .custom-arrow {
     position: absolute;
-    bottom: -40px; /* Oxları aşağıya çəkir */
+    bottom: -40px; 
     width: 30px;
     height: 30px;
     background-color: #ff6600;
@@ -81,9 +81,17 @@ ul,li{
     transform: rotate(-45deg);
   }
   
+  
+.slick-slide > div {
+  margin: 0 20px 0px 0px;
+}
+ 
 
 @media screen and (max-width: 768px){
     .container{
         margin: 0 20px;
     }  
+    .slick-slide > div {
+      margin: 0 10px;
+    }
 }

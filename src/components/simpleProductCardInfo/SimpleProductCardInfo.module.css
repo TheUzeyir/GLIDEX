@@ -48,4 +48,10 @@
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+@media screen and (max-width: 968px) {
+  .productCard_main {
+    display: none;
+  }
 }/*# sourceMappingURL=SimpleProductCardInfo.module.css.map */

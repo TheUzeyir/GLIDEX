@@ -59,9 +59,9 @@
 }
 
 .footer_link {
-  color: #BBBBBB;
+  color: gray;
   cursor: pointer;
-  margin-top: 20px;
+  margin: 20px 0;
   font-weight: bold;
 }
 
@@ -70,7 +70,6 @@
 }
 
 .footer_links ul {
-  overflow: hidden;
   max-height: 0;
   padding: 0;
   transition: max-height 1s ease-out;
@@ -139,9 +138,17 @@
   margin: 20px 0;
 }
 
+.footer_links_icon_rotate {
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+}
+
 @media screen and (max-width: 1080px) {
   .footer_wrapper {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .footer_subscription {
+    margin-bottom: 20px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -159,6 +166,16 @@
   }
   .footer_links {
     margin-bottom: 40px;
+  }
+  .footer_link {
+    color: #2DFF28;
+    margin: 20px 0 0 10px;
+  }
+  .footer_links ul {
+    overflow: hidden;
+  }
+  .footer_subscription {
+    margin-bottom: 0px;
   }
 }
 @media screen and (min-width: 768px) {
