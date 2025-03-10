@@ -14,6 +14,7 @@ import CountdownTimer from "../../components/countDownTimer/CountdownTimer";
 import ScrollToTop from "../../components/scrollTop/ScrollToTop";
 import Autoplayprogress from "../../components/slider/Autoplayprogre/Autoplayprogress";
 import UnevenSetsInfinite from "../../components/slider/UnevenSetsInfinite/UnevenSetsInfinite";
+import LogoBox from "../../components/logoBox/LogoBox";
 
 const Main = () => {
   useEffect(() => {
@@ -26,7 +27,7 @@ const Main = () => {
   
   return (
     <div>
-      <div className="mainCard">
+      {/* <div className="mainCard">
         <HeaderDetskop/>
       </div>
       <div className="mainCard">
@@ -56,13 +57,16 @@ const Main = () => {
       </div>
       <div className="mainCard" data-aos="zoom-in">
         <Autoplayprogress/>
-      </div>
+      </div> */}
       <div className="mainCard" data-aos="zoom-in">
+        <LogoBox/>
+      </div>
+      {/* <div className="mainCard" data-aos="zoom-in">
         <Footer/>
       </div>
       <div className="mainCard" data-aos="zoom-in">
         <FooterResponsive />
-      </div>
+      </div> */}
     </div>
   );
 };
