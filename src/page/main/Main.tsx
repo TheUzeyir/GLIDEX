@@ -14,7 +14,7 @@ import CountdownTimer from "../../components/countDownTimer/CountdownTimer";
 import ScrollToTop from "../../components/scrollTop/ScrollToTop";
 import Autoplayprogress from "../../components/slider/Autoplayprogre/Autoplayprogress";
 import UnevenSetsInfinite from "../../components/slider/UnevenSetsInfinite/UnevenSetsInfinite";
-import LogoBox from "../../components/logoBox/LogoBox";
+import LogoBox from "../../components/slider/logoBox/LogoBox";
 
 const Main = () => {
   useEffect(() => {
@@ -32,9 +32,9 @@ const Main = () => {
       </div>
       <div className="mainCard">
         <HeaderResponsive/>
-      </div>
+      </div> */}
       <ScrollToTop/>
-      <div className="mainCard" data-aos="zoom-in">
+      {/* <div className="mainCard" data-aos="zoom-in">
         <AutoPlayCard/>
       </div>
       <div className="mainCard" data-aos="zoom-in">
@@ -48,11 +48,11 @@ const Main = () => {
       </div>
       <div className="mainCard" data-aos="zoom-in">
         <SimpleProductCardInfo/>
-      </div>
-      <div className="mainCard" data-aos="zoom-in">
-        <UnevenSetsInfinite/>
-      </div>
-      <div className="mainCard" data-aos="zoom-in">
+      </div> */}
+      {/* <div className="mainCard unevenSetsInfinite" data-aos="zoom-in">
+        <UnevenSetsInfinite />
+      </div> */}
+      {/* <div className="mainCard" data-aos="zoom-in">
         <CountdownTimer/>
       </div>
       <div className="mainCard" data-aos="zoom-in">

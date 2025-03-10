@@ -1,7 +1,5 @@
-.logoBoxContainer {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    justify-content: center;
+.logoBoxContainer{
+    width: 100%;
 }
 
 .logoBoxItem {
@@ -21,7 +19,7 @@
     object-fit: cover;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
-    filter: blur(2px);
+    filter: blur(1px);
     transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out, filter 0.5s ease-in-out;
 }
 
@@ -39,4 +37,15 @@
 .logoBoxItem:hover .productImage {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+}
+
+
+@media screen and (max-width:768px) {
+    .logoBoxItem {
+        height: 60px;
+    }
+    
+    .logoImage {
+        width: 50px;;
+    }
 }
