@@ -1,48 +1,76 @@
 import { useState, useEffect } from "react";
-import { FaArrowUp } from "react-icons/fa";
 import style from "./scrollToTop.module.css";
+import { FaArrowUp } from "react-icons/fa6";
 
-const ScrollToTop = () => {
-  const [visible, setVisible] = useState(false);
-  const [borderWidth, setBorderWidth] = useState(5); // Starting border width
+const CircleComponent = () => {
+  const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      const scrollY = window.scrollY;
-      // Set the button visibility based on scroll position
-      if (scrollY > 300) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const percentage = (scrollTop / maxScroll) * 100;  // Kaydırma ile orantılı olarak hesapla
 
-      // Dynamically increase border size based on scroll position
-      const newBorderWidth = Math.min(15, (scrollY / window.innerHeight) * 15);
-      setBorderWidth(newBorderWidth); // Update the border size
+      setScrollPercentage(percentage); // Kaydırma oranını güncelle
     };
 
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const circleLength = 314; // Çevre uzunluğu
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: "smooth", 
     });
   };
 
   return (
-    <button
-      className={`${style.scrollToTop} ${visible ? style.show : ""}`}
-      onClick={scrollToTop}
-      style={{
-        borderWidth: `${borderWidth}px`, // Dynamically change the border width
-      }}
-    >
-      <FaArrowUp />
-    </button>
+    <div className={style.circleWrapper} onClick={scrollToTop}>
+      <svg
+        className={style.circle}
+        viewBox="0 0 120 120"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Dış çember */}
+        <circle
+          cx="60"
+          cy="60"
+          r="50"
+          fill="none"
+          stroke="#ccc"
+          strokeWidth="6"  // Border kalınlığı
+        />
+        {/* İç çember (scroll'a göre dolma/azalma) */}
+        <circle
+          cx="60"
+          cy="60"
+          r="50"
+          fill="none"
+          stroke="#2df288"
+          strokeWidth="6"  // Border kalınlığı
+          strokeDasharray={circleLength}  // Çevre uzunluğu
+          strokeDashoffset={(circleLength * scrollPercentage) / 100}  // Kaydırma ile dolacak offset
+          style={{ transition: "stroke-dashoffset 0.2s ease" }}
+        />
+      </svg>
+      <div
+        className={style.arrowIcon}
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          fontSize: "24px", 
+          color: "#2df288", 
+        }}
+      >
+        <FaArrowUp />
+      </div>
+    </div>
   );
 };
 
-export default ScrollToTop;
+export default CircleComponent;

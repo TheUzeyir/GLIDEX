@@ -25,6 +25,11 @@
     padding: 15px 30px;
     margin-top: 40px;
     font-size: 16px;
+    background: #008000;
+    color: white;
+}
+.slideContentTextbox_Btn:hover {
+    background: blue;
 }
 
 .slideContentTextbox_item {
@@ -96,6 +101,7 @@
     padding: 15px 30px;
     margin-top: 40px;
     font-size: 16px;
+    
 }
 
 @media screen and (max-width: 968px) {

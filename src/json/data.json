@@ -5,12 +5,18 @@
       "description": "The best scooter in the market for a smooth ride",
       "duration": "6.30 hrs",
       "range": "126 km",
+      "durationText": "Duration",
+      "rangeText": "Range",
+      "batteryText": "Battery",
       "battery": "77 kWh",
       "batteryImg": "https://greenshift-road.myshopify.com/cdn/shop/files/Emission-icon.svg?v=1694095411",
       "rangeImg": "https://greenshift-road.myshopify.com/cdn/shop/files/Range-icon.svg?v=1694093594",
       "durationImg": "https://greenshift-road.myshopify.com/cdn/shop/files/Battery-icon.svg?v=1694093243",
       "image": "https://greenshift-road.myshopify.com/cdn/shop/files/Product11.jpg?v=1698312725",
-      "imageHover": "https://greenshift-road.myshopify.com/cdn/shop/files/Product11.2.jpg?v=1698312739&width=533"
+      "imageHover": "https://greenshift-road.myshopify.com/cdn/shop/files/Product11.2.jpg?v=1698312739&width=533",
+      "color":"green",
+      "power":"350W",
+      "quantity":"22,220.00"
   },
   { 
       "name": "Segway - Ninebot Z40X12",
@@ -19,23 +25,35 @@
       "duration": "8.50 hrs",
       "range": "126 km",
       "battery": "77 kWh",
+      "durationText": "Duration",
+      "rangeText": "Range",
+      "batteryText": "Battery",
       "batteryImg": "https://greenshift-road.myshopify.com/cdn/shop/files/Emission-icon.svg?v=1694095411",
       "rangeImg": "https://greenshift-road.myshopify.com/cdn/shop/files/Range-icon.svg?v=16940935943",
       "durationImg": "https://greenshift-road.myshopify.com/cdn/shop/files/Battery-icon.svg?v=1694093243",
       "image": "https://greenshift-road.myshopify.com/cdn/shop/files/Product1.jpg?v=1698049151",
-      "imageHover": "https://greenshift-road.myshopify.com/cdn/shop/files/Product1.2.jpg?v=1698049176"
+      "imageHover": "https://greenshift-road.myshopify.com/cdn/shop/files/Product1.2.jpg?v=1698049176",
+      "color":"white",
+      "power":"550W",
+      "quantity":"44,400.00"
   },
   {
       "name": "Electric Scooter",
       "subtitle": "Charging Convenience Included",
       "description": "The best scooter in the market for a smooth ride",
       "duration": "10.30 hrs",
+      "durationText": "Duration",
+      "rangeText": "Range",
+      "batteryText": "Battery",
       "range": "135 km",
       "battery": "80 kWh",
       "batteryImg": "https://greenshift-road.myshopify.com/cdn/shop/files/Emission-icon.svg?v=1694095411",
       "rangeImg": "https://greenshift-road.myshopify.com/cdn/shop/files/Range-icon.svg?v=1694093594",
       "durationImg": "https://greenshift-road.myshopify.com/cdn/shop/files/Battery-icon.svg?v=1694093243",
       "image": "https://greenshift-road.myshopify.com/cdn/shop/files/Product12.1.jpg?v=1698312943",
-      "imageHover": "https://greenshift-road.myshopify.com/cdn/shop/files/Product12.2.jpg?v=1698312943&width=533"
+      "imageHover": "https://greenshift-road.myshopify.com/cdn/shop/files/Product12.2.jpg?v=1698312943&width=533",
+      "color":"green",
+      "power":"650W",
+      "quantity":"55,500.00"
   }
 ]

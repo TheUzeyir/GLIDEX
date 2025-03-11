@@ -1,0 +1,47 @@
+.ServiceCard {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.ServiceCard_box {
+  background: #252525;
+  padding: 30px;
+  border-radius: 6px;
+}
+
+.ServiceCard_icon {
+  color: #2dff28;
+  font-size: 40px;
+}
+
+.ServiceCard_box_title {
+  margin: 20px 0;
+}
+
+.ServiceCard_box_subtitle {
+  color: #c1c1c1;
+}
+
+@media screen and (max-width: 968px) {
+  .ServiceCard_icon {
+    font-size: 30px;
+  }
+  .ServiceCard_box_title {
+    font-size: 16px;
+  }
+  .ServiceCard_box_subtitle {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .ServiceCard {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .ServiceCard_box {
+    padding: 20px;
+  }
+}/*# sourceMappingURL=serviceCard.module.css.map */
