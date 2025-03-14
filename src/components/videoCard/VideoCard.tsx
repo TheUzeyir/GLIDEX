@@ -5,7 +5,7 @@ const VideoCard = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: "50%", y: "50%" });
-  const [isMouseInVideo, setIsMouseInVideo] = useState(false);
+  const [isMouseInVideo, setIsMouseInVideo] = useState(true); // Başlangıçta true!
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -30,7 +30,7 @@ const VideoCard = () => {
 
   const handleMouseLeave = () => {
     setMousePosition({ x: "50%", y: "50%" });
-    setIsMouseInVideo(false);
+    setIsMouseInVideo(true); // Videodan çıkınca tekrar ortada kalsın
   };
 
   return (
