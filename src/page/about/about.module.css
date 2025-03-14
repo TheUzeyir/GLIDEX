@@ -9,4 +9,13 @@
 .aboutPageImgMain {
   width: 100%;
   height: 400px;
+}
+
+@media screen and (max-width: 968px) {
+  .aboutPageImgMain {
+    height: 250px;
+  }
+  .aboutPageTitle {
+    padding-top: 100px;
+  }
 }/*# sourceMappingURL=about.module.css.map */

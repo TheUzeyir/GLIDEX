@@ -47,28 +47,12 @@ export default function App() {
         "The best investment I’ve made for my commute. The ride is smooth, and the design is top-notch!",
     },
   ];
- 
-  let slides = [];
-  for (let i = 0; i < testimonials.length; i++) {
-    slides.push(
-      <SwiperSlide key={testimonials[i].name} className={style.swiperSlide}>
-        <div className={style.slideContent}>
-          <img src={testimonials[i].image} alt={testimonials[i].name} className={style.avatar} />
-          <h3 className={style.name}>{testimonials[i].name}</h3>
-          <i className={style.location}>{testimonials[i].location}</i>
-          <p className={style.review}>"{testimonials[i].review}"</p>
-        </div>
-      </SwiperSlide>
-    );
-  }
 
   return (
     <Swiper
       effect={"coverflow"}
       grabCursor={true}
-      slidesPerView={3} 
       spaceBetween={20}
-      
       coverflowEffect={{
         rotate: 50,
         stretch: 0,
@@ -79,8 +63,28 @@ export default function App() {
       pagination={{ clickable: true }}
       modules={[EffectCoverflow, Pagination]}
       className={style.mySwipers}
+      breakpoints={{
+        1080: {
+          slidesPerView: 3,
+        },
+        968: {
+          slidesPerView: 2,
+        },
+        0: {
+          slidesPerView: 1,
+        },
+      }}
     >
-      {slides}
+      {testimonials.map((testimonial, index) => (
+        <SwiperSlide key={index} className={style.swiperSlide}>
+          <div className={style.slideContent}>
+            <img src={testimonial.image} alt={testimonial.name} className={style.avatar} />
+            <h3 className={style.name}>{testimonial.name}</h3>
+            <i className={style.location}>{testimonial.location}</i>
+            <p className={style.review}>"{testimonial.review}"</p>
+          </div>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }

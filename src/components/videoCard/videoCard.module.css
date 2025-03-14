@@ -31,4 +31,10 @@
 .playButton:hover {
   background-color: darkgreen;
   box-shadow: 0 0 0 5px red;
+}
+
+@media screen and (max-width: 968px) {
+  .videoCard_video {
+    height: 350px;
+  }
 }/*# sourceMappingURL=videoCard.module.css.map */

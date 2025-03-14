@@ -63,3 +63,14 @@
   background: #0056b3;
   opacity: 1;
 }
+
+@media screen and (max-width:1080px) {
+  .mySwipers{
+    width: 96%;
+  }
+}
+@media screen and (max-width:968px) {
+  .mySwipers{
+    width: 96%;
+  }
+}
