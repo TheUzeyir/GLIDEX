@@ -9,10 +9,12 @@ import { FaFacebookF } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const HeaderResponsive = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const navigate=useNavigate()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,7 +82,7 @@ const HeaderResponsive = () => {
             <li className={style.sideBar_head_li}>
               Shop <MdKeyboardArrowRight className={style.sideBar_head_li_icon} />
             </li>
-            <li className={style.sideBar_head_li}>Abouts</li>
+            <li className={style.sideBar_head_li} onClick={()=>navigate("/about")}>About</li>
             <li className={style.sideBar_head_li}>
               Models <MdKeyboardArrowRight className={style.sideBar_head_li_icon} />
             </li>

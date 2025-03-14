@@ -81,7 +81,7 @@ const AutoPlayCard = () => {
             >
                 {data.map((item, idx) => {
                     const nextIndex = (idx + 1) % data.length;
-                    const nextImg = data[nextIndex].img;
+                    const nextImg = data[nextIndex].img; 
 
                     return (
                         <SwiperSlide key={item.id}>

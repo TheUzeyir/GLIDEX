@@ -51,7 +51,6 @@ const AutoIncreaseNumber = () => {
         electric vehicle
       </p>
       <button className={style.mainContainer_btn}>View shop</button>
-      <p className={style.mainContainer_line}></p>
     </div>
   );
 };
@@ -70,7 +69,7 @@ const Counter = ({ amount, duration, text, desc, start }:
           if (countRef.current) {
             countRef.current.textContent = Math.round(latest).toString();
           }
-        },
+        }, 
       });
     }
   }, [amount, duration, start]);

@@ -1,0 +1,65 @@
+.mySwipers {
+  width: 100%;
+  padding: 40px 0;
+  margin-bottom: 20px;
+}
+
+.swiperSlide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideContent {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  color: white;
+  background-color: #333;
+}
+
+.slideContent:hover {
+  transform: scale(1.05);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.location {
+  font-size: 14px;
+}
+
+.review {
+  font-size: 16px;
+  line-height: 30px;
+  margin-top: 20px;
+}
+
+.swiper-pagination {
+  position: relative;
+  margin-top: 20px;
+}
+
+.swiper-pagination-bullet {
+  background: #007bff;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  background: #0056b3;
+  opacity: 1;
+}/*# sourceMappingURL=CoverflowSlider.module.css.map */

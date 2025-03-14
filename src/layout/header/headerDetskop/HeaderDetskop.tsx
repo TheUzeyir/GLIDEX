@@ -4,9 +4,11 @@ import { CiSearch } from "react-icons/ci";
 import { RxAvatar } from "react-icons/rx";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import style from "./headerDetskop.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const HeaderDetskop = () => { 
   const [isSticky, setIsSticky] = useState(false);
+  const navigate=useNavigate()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +30,7 @@ const HeaderDetskop = () => {
           <div className={style.header_left}>
             <p className={style.header_left_item}>Home</p>
             <p className={style.header_left_item}>Home <IoIosArrowDown/></p>
-            <p className={style.header_left_item}>Home</p>
+            <p className={style.header_left_item} onClick={() => navigate('/about')}>About</p>
             <p className={style.header_left_item}>Home <IoIosArrowDown/></p>
             <p className={style.header_left_item}>Home</p>
             <p className={style.header_left_item}>Home <IoIosArrowDown/></p>

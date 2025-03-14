@@ -2,7 +2,11 @@
   font-size: 18px;
   color: white;
   position: relative;
-  height: 250px;
+  height: -moz-max-content;
+  height: max-content;
+  border-bottom: 1px solid #c1c1c1;
+  padding-bottom: 80px;
+  margin-bottom: 80px;
 }
 
 .footerText {
@@ -28,8 +32,9 @@
   font-size: 18px;
   border-radius: 25px;
   position: absolute;
-  top: 90%;
-  left: 45%;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
   background: #2dff28;
 }
@@ -60,19 +65,7 @@
   font-size: 50px;
 }
 
-.mainContainer_line {
-  width: 100%;
-  height: 2px;
-  background: #c1c1c1;
-  position: absolute;
-  bottom: 1%;
-  z-index: -1;
-}
-
 @media screen and (max-width: 968px) {
-  .mainContainer {
-    margin-bottom: 160px;
-  }
   .counterContainer {
     gap: 40px;
   }
@@ -86,9 +79,11 @@
   }
   .mainContainer {
     border: none;
+    margin-bottom: 40px;
   }
   .mainContainer_btn {
-    margin-top: 130px;
+    top: 92%;
+    left: 50%;
   }
   .mainContainer_line {
     bottom: -50%;

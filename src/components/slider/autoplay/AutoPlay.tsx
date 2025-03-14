@@ -19,13 +19,16 @@ function AutoPlay() {
     <div className={style.slidercontainer}>
       <Slider {...settings}>
         <div className={style.slider}>
-          <h3>Lorem ipsum dolor sit amet.</h3>
+          <h3>* Explore green, black variant</h3>
         </div>
         <div className={style.slider}>
-          <h3>Lorem ipsum dolor sit amet.</h3>
+          <h3>* Go eco-friendly, good mileage</h3>
         </div>
         <div className={style.slider}>
-          <h3>Lorem ipsum dolor sit amet.</h3>
+          <h3>* Aesthetically enhanced design, user-friendly module</h3>
+        </div>
+        <div className={style.slider}>
+          <h3>* Disc brake, Smooth cushion seat</h3>
         </div>
       </Slider>
     </div>

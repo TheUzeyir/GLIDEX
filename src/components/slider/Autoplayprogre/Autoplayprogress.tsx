@@ -53,8 +53,8 @@ export default function Autoplayprogress() {
   ];
 
   const groupedData = [
-    [data[0], data[1]], // 1-ci və 2-ci element
-    [data[2], data[3]], // 3-cü və 4-cü element
+    [data[0], data[1]], 
+    [data[2], data[3]], 
   ];
 
   return (
