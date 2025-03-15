@@ -17,11 +17,13 @@ import UnevenSetsInfinite from "../../components/slider/UnevenSetsInfinite/Uneve
 import LogoBox from "../../components/slider/logoBox/LogoBox";
 import MainPageProduct from "../../components/mainPageProduct/MainPageProduct";
 import ServiceCard from "../../components/serviceCard/ServiceCard";
+import ShopModal from "../../components/shopModal/ShopModal";
 
 const Main = () => {
+
   useEffect(() => {
     Aos.init({
-      duration: 2000,
+      duration: 1800,
       once: true, 
       mirror: true,
     });
@@ -34,6 +36,9 @@ const Main = () => {
       </div>
       <div className="mainCard">
         <HeaderResponsive/>
+      </div>
+      <div>
+        <ShopModal isVisible={false} />
       </div>
       <ScrollToTop/>
       <div className="mainCard" data-aos="zoom-in">
