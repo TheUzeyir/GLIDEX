@@ -2,11 +2,10 @@ import { useRef, useState } from "react";
 import style from "./videoCard.module.css";
 
 const VideoCard = () => {
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: "50%", y: "50%" });
-  const [isMouseInVideo, setIsMouseInVideo] = useState(true); // Başlangıçta true!
-
+  const [isMouseInVideo, setIsMouseInVideo] = useState(true); 
   const togglePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -18,7 +17,7 @@ const VideoCard = () => {
     }
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent) => {
     if (videoRef.current) {
       const rect = videoRef.current.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -30,7 +29,7 @@ const VideoCard = () => {
 
   const handleMouseLeave = () => {
     setMousePosition({ x: "50%", y: "50%" });
-    setIsMouseInVideo(true); // Videodan çıkınca tekrar ortada kalsın
+    setIsMouseInVideo(true);  
   };
 
   return (
