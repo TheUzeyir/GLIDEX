@@ -1,0 +1,83 @@
+.newsBoxContainer {
+  padding: 40px;
+  background-color: transparent;
+}
+
+.newsBoxCard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.newsBoxTitle {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.newsItem {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.newsItem:hover {
+  transform: translateY(-10px);
+}
+
+.newsItemImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.newsItemTime {
+  font-size: 12px;
+  color: white;
+  background: #000;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+.newsItemTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: gray;
+  margin-top: 15px;
+}
+
+.newsItemSubtitle {
+  font-size: 18px;
+  color: white;
+  margin-top: 10px;
+}
+
+.newsItemDesc {
+  font-size: 16px;
+  color: gray;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.newsItemLink {
+  font-size: 16px;
+  color: #2dff28;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.newsItemLink:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=newsBox.module.css.map */

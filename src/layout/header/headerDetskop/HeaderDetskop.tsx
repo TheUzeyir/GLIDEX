@@ -21,19 +21,18 @@ const HeaderDetskop = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, []); 
  
   return (
     <div className={`${style.header_container} ${isSticky ? style.sticky : ""}`}>
       <div className="container">
         <div className={style.header}>
           <div className={style.header_left}>
-            <p className={style.header_left_item}>Home</p>
-            <p className={style.header_left_item}>Home <IoIosArrowDown/></p>
+            <p className={style.header_left_item} onClick={() => navigate('/')}>Home</p>
             <p className={style.header_left_item} onClick={() => navigate('/about')}>About</p>
-            <p className={style.header_left_item}>Home <IoIosArrowDown/></p>
-            <p className={style.header_left_item}>Home</p>
-            <p className={style.header_left_item}>Home <IoIosArrowDown/></p>
+            <p className={style.header_left_item} onClick={()=>navigate("/journal")}>Journal</p>
+            <p className={style.header_left_item} onClick={() => navigate('/contact')}>Contact</p>
+            <p className={style.header_left_item}>Shop <IoIosArrowDown/></p>
           </div>
           <img
             src="https://greenshift-road.myshopify.com/cdn/shop/files/GlideX_Logo.svg?v=1709810815&width=263"

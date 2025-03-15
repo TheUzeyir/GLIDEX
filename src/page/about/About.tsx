@@ -26,8 +26,12 @@ const About = () => {
     <div>
         <HeaderDetskop/>
         <HeaderResponsive/>
-        <h2 className={style.aboutPageTitle}>About Road</h2>
-        <img className={style.aboutPageImgMain} src="https://greenshift-road.myshopify.com/cdn/shop/files/IMG_Section.jpg?v=1698209209&width=2000" alt="" />
+        <div className="mainCard" data-aos="zoom-in">
+          <h2 className={style.aboutPageTitle}>About Road</h2> 
+        </div>
+        <div className="mainCard" data-aos="zoom-in">
+          <img className={style.aboutPageImgMain} src="https://greenshift-road.myshopify.com/cdn/shop/files/IMG_Section.jpg?v=1698209209&width=2000" alt="" />
+        </div>
         <div className="mainCard" data-aos="zoom-in">
           <AutoIncreaseNumber/>
         </div>
@@ -41,8 +45,12 @@ const About = () => {
         <div className="mainCard" data-aos="zoom-in">
           <LogoBox/>
         </div>
-        <Footer/>
-        <FooterResponsive/>
+        <div className="mainCard" data-aos="zoom-in">
+          <Footer/>
+        </div>
+        <div className="mainCard" data-aos="zoom-in">
+          <FooterResponsive/>
+        </div>
     </div>
   )
 }

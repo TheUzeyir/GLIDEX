@@ -77,17 +77,14 @@ const HeaderResponsive = () => {
           <button className={style.close_button} onClick={toggleMenu}>
             <IoClose className={style.sideBar_head_closeIcon} />
           </button>
-          <ul>
-            <li className={style.sideBar_head_li}>Home</li>
+          <ul> 
+            <li className={style.sideBar_head_li} onClick={()=>navigate("/")}>Home</li>
             <li className={style.sideBar_head_li}>
               Shop <MdKeyboardArrowRight className={style.sideBar_head_li_icon} />
             </li>
             <li className={style.sideBar_head_li} onClick={()=>navigate("/about")}>About</li>
-            <li className={style.sideBar_head_li}>
-              Models <MdKeyboardArrowRight className={style.sideBar_head_li_icon} />
-            </li>
-            <li className={style.sideBar_head_li}>Journal</li>
-            <li className={style.sideBar_head_li}>Contack</li>
+            <li className={style.sideBar_head_li} onClick={()=>navigate("/journal")}>Journal</li>
+            <li className={style.sideBar_head_li} onClick={()=>navigate("/contack")}>Contack</li>
           </ul>
         </div>
         <div className={style.sideBar_bottom}>
