@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo,useState } from "react";
 import data from "../../json/data.json";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import style from "./mainPageProduct.module.css";
@@ -9,11 +9,12 @@ const MainPageProduct = () => {
     return data[randomIndex];
   }, [data]);
 
-  const [selectedPower, setSelectedPower] = useState(randomItem.power);
+  const [selectedPower, setSelectedPower] = useState(randomItem.difficultyLevel);
 
   const handlePowerChange = (power: string) => {
     setSelectedPower(power);
   };  
+
 
   return (
     <div className="container">
@@ -21,75 +22,33 @@ const MainPageProduct = () => {
         <img
           src={randomItem.image}
           alt={randomItem.name}
-          className={style.mainPageProduct__img}
+          className={style.mainPageProduct__img} 
         />
         <div className={style.mainPageProduct__details}>
           <p className={style.mainPageProduct__name}>{randomItem.name}</p>
           <p className={style.mainPageProduct__subtitle}>{randomItem.subtitle}</p>
-          <p className={style.mainPageProduct__quantity}>Rs.{randomItem.quantity}</p>
+          <p className={style.mainPageProduct__quantity}>Qiyməti-{randomItem.price}AZN</p>
           <p className={style.mainPageProduct__description}>{randomItem.description}</p>
+          <p className={style.mainPageProduct__courseDuration}>Müddəti: {randomItem.courseDuration}</p>
           <div className={style.mainPageProduct__specs}>
-            <div className={style.mainPageProduct__specCard}>
-              <img
-                src={randomItem.batteryImg}
-                alt="Battery"
-                className={style.mainPageProduct__specImg}
-              />
-              <div className={style.mainPageProduct__specText}>
-                <span className={style.mainPageProduct__specLabel}>
-                  {randomItem.batteryText}
-                </span>
-                <span className={style.mainPageProduct__specValue}>
-                  {randomItem.battery}
-                </span>
-              </div>
-            </div>
-            <div className={style.mainPageProduct__specCard}>
-              <img
-                src={randomItem.rangeImg}
-                alt="Range"
-                className={style.mainPageProduct__specImg}
-              />
-              <div className={style.mainPageProduct__specText}>
-                <span className={style.mainPageProduct__specLabel}>
-                  {randomItem.rangeText}
-                </span>
-                <span className={style.mainPageProduct__specValue}>
-                  {randomItem.range}
-                </span>
-              </div>
-            </div>
-            <div className={style.mainPageProduct__specCard}>
-              <img
-                src={randomItem.durationImg}
-                alt="Duration"
-                className={style.mainPageProduct__specImg}
-              />
-              <div className={style.mainPageProduct__specText}>
-                <span className={style.mainPageProduct__specLabel}>
-                  {randomItem.durationText}
-                </span>
-                <span className={style.mainPageProduct__specValue}>
-                  {randomItem.duration}
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className={style.mainPageProduct__powerOptions}>
-            <h2>Power: {selectedPower}</h2>
-            <div className={style.mainPageProduct__powerOptions_box}>
-              <p className={`${style.mainPageProduct__powerOption} ${selectedPower === "350W" ? style.selected : ""}`} 
-              onClick={() => handlePowerChange("350W")}>350W</p>
-              <p className={`${style.mainPageProduct__powerOption} ${selectedPower === "550W" ? style.selected : ""}`}
-              onClick={() => handlePowerChange("550W")}>550W</p>
-            </div>
-          </div>
-          <div className={style.mainPageProduct__color}>
-            <p>Color: {randomItem.color}</p>
-          </div>
+            <span className={style.mainPageProduct__specLabel}>Çətinlik Səviyyəsi:</span>
+            <span className={style.mainPageProduct__specValue}>{randomItem.difficultyLevel}</span>
+          </div> 
+          <p className={style.mainPageProduct__BoxTitle}>Əldə edəcəyiniz bacarıqlar:</p>
+          <div className={style.mainPageProduct__powerOptions_box}>
+              <p 
+                className={`${style.mainPageProduct__powerOption} ${selectedPower === "Başlanğıc" ? style.selected : ""}`} 
+                onClick={() => handlePowerChange("Başlanğıc")}>{randomItem.skill}</p>
+              <p 
+                className={`${style.mainPageProduct__powerOption} ${selectedPower === "Orta" ? style.selected : ""}`} 
+                onClick={() => handlePowerChange("Orta")}>{randomItem.skill2}</p>
+              <p 
+                className={`${style.mainPageProduct__powerOption} ${selectedPower === "İrəli" ? style.selected : ""}`} 
+                onClick={() => handlePowerChange("İrəli")}>{randomItem.skill3}</p>
+            </div> 
           <div className={style.mainPageProduct__details_btnBox}>
-            <button className={style.mainPageProduct__details_btnBox_btn_add}>Add to cart</button>
-            <button className={style.mainPageProduct__details_btnBox_btn_view}>View full details <MdKeyboardArrowRight/></button>
+            <button className={style.mainPageProduct__details_btnBox_btn_add}>Favorilərə əlavə et</button>
+            <button className={style.mainPageProduct__details_btnBox_btn_view}>Data ətrafı məlumat al<MdKeyboardArrowRight/></button>
           </div>
         </div>
       </div>

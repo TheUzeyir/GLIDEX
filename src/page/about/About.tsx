@@ -27,10 +27,10 @@ const About = () => {
         <HeaderDetskop/>
         <HeaderResponsive/>
         <div className="mainCard" data-aos="zoom-in">
-          <h2 className={style.aboutPageTitle}>About Road</h2> 
+          <img className={style.aboutPageImgMain} src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
         </div>
         <div className="mainCard" data-aos="zoom-in">
-          <img className={style.aboutPageImgMain} src="https://greenshift-road.myshopify.com/cdn/shop/files/IMG_Section.jpg?v=1698209209&width=2000" alt="" />
+          <h2 className={style.aboutPageTitle}>Kurs Hakkında</h2> 
         </div>
         <div className="mainCard" data-aos="zoom-in">
           <AutoIncreaseNumber/>

@@ -25,16 +25,15 @@
   transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out, filter 0.5s ease-in-out;
 }
 
-.logoImage {
+.logoText {
   width: 100px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  -o-object-fit: contain;
-     object-fit: contain;
   position: relative;
+  text-align: center;
   z-index: 2;
-  color: gray;
+  color: white;
 }
 
 .logoBoxItem:hover .productImage {
@@ -46,7 +45,12 @@
   .logoBoxItem {
     height: 60px;
   }
-  .logoImage {
-    width: 50px;
+  .logoText {
+    width: 30px;
+    left: 20%;
+    font-size: 12px;
+  }
+  .logoBoxContainer {
+    margin-bottom: 20px;
   }
 }/*# sourceMappingURL=logoBox.module.css.map */

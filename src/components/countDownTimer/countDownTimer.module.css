@@ -78,6 +78,9 @@
   }
 }
 @media (max-width: 968px) {
+  .timerCard_box {
+    margin: 0px 0 20px 0;
+  }
   .timerCard_box_card_timer_item {
     padding: 10px 0px 10px 10px;
   }

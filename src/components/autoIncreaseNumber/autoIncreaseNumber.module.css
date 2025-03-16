@@ -4,7 +4,6 @@
   position: relative;
   height: -moz-max-content;
   height: max-content;
-  border-bottom: 1px solid #c1c1c1;
   padding-bottom: 80px;
   margin-bottom: 80px;
 }
@@ -40,7 +39,7 @@
 }
 
 .countertext {
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .counterItem_title {
@@ -62,7 +61,7 @@
 .nonwigglycountups {
   font-variant-numeric: tabular-nums;
   margin-right: 5px;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 @media screen and (max-width: 968px) {
@@ -90,8 +89,16 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .counterItemBox {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
   .nonwigglycountups,
   .countertext {
-    font-size: 40px;
+    font-size: 18px;
+  }
+  .counterItem_title {
+    display: none;
   }
 }/*# sourceMappingURL=autoIncreaseNumber.module.css.map */

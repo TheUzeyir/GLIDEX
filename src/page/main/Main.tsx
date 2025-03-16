@@ -44,16 +44,16 @@ const Main = () => {
       <div className="mainCard" data-aos="zoom-in">
         <AutoPlayCard/>
       </div>
-      <div className="mainCard" data-aos="zoom-in">
+      <div className="mainCard" data-aos="fade-right">
         <SimpleProduct/>
       </div>
-      <div className="mainCard" data-aos="zoom-in">
+      <div className="mainCard" data-aos="fade-ledt">
         <AutoIncreaseNumber/>
       </div>
-      <div className="mainCard" data-aos="zoom-in">
+      <div className="mainCard" data-aos="fade-down">
         <AutoPlay/>
       </div>
-      <div className="mainCard" data-aos="zoom-in">
+      <div className="mainCard" data-aos="fade-up">
         <SimpleProductCardInfo/>
       </div>
       <div className="mainCard unevenSetsInfinite" data-aos="zoom-in">

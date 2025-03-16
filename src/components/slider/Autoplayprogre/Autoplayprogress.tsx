@@ -4,10 +4,20 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
 import style from "./autoPlayProgress.module.css";
+import jsonData from "../../../json/data.json";
+
+const shuffleArray = <T,>(array: T[]): T[] => {
+  return [...array].sort(() => Math.random() - 0.5);
+};
 
 export default function Autoplayprogress() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [randomCourses, setRandomCourses] = useState<typeof jsonData>([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 968);
+
+  useEffect(() => {
+    setRandomCourses(shuffleArray(jsonData).slice(0, 4));
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -17,45 +27,13 @@ export default function Autoplayprogress() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const data = [
-    {
-      img: "https://greenshift-road.myshopify.com/cdn/shop/files/IMG_Sliders_3_Video.jpg?v=1697882087&width=2000",
-      title: "Swift Recharge",
-      subtitle: "3-Hour Rapid Charging",
-      id: "01",
-      boxText: "Anti theft measures",
-      desc: "Our Kick Back Scooter prioritizes security with GPS and remote locking"
-    },
-    {
-      img: "https://greenshift-road.myshopify.com/cdn/shop/files/IMG_Sliders_2.jpg?v=1697881948&width=2000",
-      title: "Ultra High Performance",
-      subtitle: "0-40 KMPH İn 6.8 SEC**",
-      id: "02",
-      boxText: "72 VOLT SCRAMBLER",
-      desc: "The 72 VOLT SCRAMBLER redefines power with 72V dominance"
-    },
-    {
-      img: "https://greenshift-road.myshopify.com/cdn/shop/files/Mask_group_1.png?v=1695100646&width=2000",
-      title: "Power Unleased",
-      subtitle: "72V Dominance Astounding Power",
-      id: "03",
-      boxText: "3 hours fast charge",
-      desc: "Our Kick Back Scooter offers a swift 3-hour charge for rapid adventures"
-    },
-    {
-      img: "https://greenshift-road.myshopify.com/cdn/shop/files/IMG_Sliders_4.jpg?v=1697881949&width=2000",
-      title: "Advanted Security",
-      subtitle: "Secure with Remote Locking",
-      id: "04",
-      boxText: "26 MPH speed",
-      desc: "With a maximum velocity of 26 MPH, this smooth and strong bike will make them hurdle through the roads quickly"
-    },
-  ];
-
-  const groupedData = [
-    [data[0], data[1]], 
-    [data[2], data[3]], 
-  ];
+  const groupedData =
+    randomCourses.length === 4
+      ? [
+          [randomCourses[0], randomCourses[1]],
+          [randomCourses[2], randomCourses[3]],
+        ]
+      : [];
 
   return (
     <div className={style.autoPlayProgress}>
@@ -73,13 +51,13 @@ export default function Autoplayprogress() {
         navigation={false}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       >
-        {data.map((item, index) => (
+        {randomCourses.map((item, index) => (
           <SwiperSlide key={index}>
             <div className={style.slideContent}>
-              <img src={item.img} alt={item.title} className={style.slideImage} />
+              <img src={item.image} alt={item.name} className={style.slideImage} />
               <div className={style.slideTextBox}>
-                <h2 className={style.slideTitle}>{item.title}</h2>
-                <p className={style.slideSubtitle}>{item.subtitle}</p>
+                <h2 className={style.slideTitle}>{item.name}</h2>
+                <p className={style.slideSubtitle}>{item.description}</p>
               </div>
             </div>
           </SwiperSlide>
@@ -87,7 +65,7 @@ export default function Autoplayprogress() {
       </Swiper>
 
       <div className={style.slideContentBox}>
-        {isMobile
+        {isMobile && groupedData.length > 0
           ? groupedData[Math.floor(activeIndex / 2)].map((item, index) => (
               <div
                 className={`${style.slideTextBoxs} ${
@@ -95,24 +73,24 @@ export default function Autoplayprogress() {
                 }`}
                 key={index}
               >
-                <h2 className={style.slideTitles}>{item.boxText}</h2>
-                <p className={style.slideContents}>{item.desc}</p>
+                <h2 className={style.slideTitles}>{item.name}</h2>
+                <p className={style.slideContents}>{item.description}</p>
                 <p className={`${style.slideId} ${activeIndex % 2 === index ? style.activeId : ""}`}>
-                  {item.id}
+                  {item.price}-AZN
                 </p>
               </div>
             ))
-          : data.map((item, index) => (
+          : randomCourses.map((item, index) => (
               <div
                 className={`${style.slideTextBoxs} ${
                   activeIndex === index ? style.activeSlide : ""
                 }`}
                 key={index}
               >
-                <h2 className={style.slideTitles}>{item.boxText}</h2>
-                <p className={style.slideContents}>{item.desc}</p>
+                <h2 className={style.slideTitles}>{item.name}</h2>
+                <p className={style.slideContents}>{item.description}</p>
                 <p className={`${style.slideId} ${activeIndex === index ? style.activeId : ""}`}>
-                  {item.id}
+                  {item.price}-AZN
                 </p>
               </div>
             ))}

@@ -33,29 +33,29 @@ const AutoPlayCard = () => {
 
     const data = [
         {
-            id: 1,
-            title: "Smooth Ride , Go Green With Our Certified E-Vehicles",
-            subTitle: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, ea.",
-            item: "Smooth Ride , Go Green With Our Certified E-Vehicles",
-            img: "https://greenshift-road.myshopify.com/cdn/shop/files/Slider_03.jpg?v=1695879954&width=2000",
-            btnText: "Read more"
+            "id": 1,
+            "title": "Effektiv Komanda İşi",
+            "subTitle": "Uğurlu layihələr üçün güclü komanda ruhu və effektiv əməkdaşlıq qur.",
+            "item": "Komanda ilə işləmə bacarıqlarını inkişaf etdir və məqsədlərə birlikdə çat",
+            "img": "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "btnText": "Kurslarım"
         },
         {
-            id: 2,
-            title: "Boost Your Business With Our Certified E-Vehicles",
-            subTitle: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, ea.",
-            item: "Smooth Ride , Go Green With Our Certified E-Vehicles",
-            img: "https://greenshift-road.myshopify.com/cdn/shop/files/Slider_02.png?v=1698306712&width=2000",
-            btnText: "Read more"
-        },
+            "id": 2,
+            "title": "Yüksək Səviyyəli Təhsil",
+            "subTitle": "Müasir tədris metodları və peşəkar müəllimlərlə gələcəyini formalaşdır.",
+            "item": "İnnovativ təhsil yanaşmaları ilə biliklərini genişləndir və uğura aparan yolu kəşf et.",
+            "img": "https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?cs=srgb&dl=pexels-divinetechygirl-1181271.jpg&fm=jpg",
+            "btnText": "Təhsilə Başla"
+        },        
         {
-            id: 3,
-            title: "Smooth Ride , Go Green With Our Certified E-Vehicles",
-            subTitle: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, ea.",
-            item: "Smooth Ride , Go Green With Our Certified E-Vehicles",
-            img: "https://greenshift-road.myshopify.com/cdn/shop/files/Slider_01.jpg?v=1695879954&width=20000",
-            btnText: "Read more"
-        }
+            "id": 3,
+            "title": "Süni İntellekt ilə Gələcəyini Qur",
+            "subTitle": "Süni intellektin gücü ilə innovasiyalara addım at. Öyrən, inkişaf et və gələcəyini formalaşdır!",
+            "item": "Süni intellekt texnologiyaları ilə karyeranı zirvəyə daşı",
+            "img": "https://images.pexels.com/photos/6153752/pexels-photo-6153752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "btnText": "AI Kurslarım"
+        }        
     ];
 
     return (
@@ -88,9 +88,11 @@ const AutoPlayCard = () => {
                             <div className={style.slideContent}>
                                 <img src={item.img} alt="Current slide" className={style.slideContentImg} />
                                 <div className={style.slideContentTextbox}>
-                                    <p className={style.slideContentTextbox_title}>{item.title}</p>
-                                    <p className={style.slideContentTextbox_subTitle}>{item.subTitle}</p>
-                                    <p className={style.slideContentTextbox_item}>{item.item}</p>
+                                    <div className={style.slideContentTextboxs}>
+                                        <p className={style.slideContentTextbox_title}>{item.title}</p>
+                                        <p className={style.slideContentTextbox_subTitle}>{item.subTitle}</p>
+                                        <p className={style.slideContentTextbox_item}>{item.item}</p>
+                                    </div>
                                     <button className={style.slideContentTextbox_Btn}>{item.btnText}</button>
                                     <div className={style.progresscontainer}>
                                         <div className={style.progressbar} style={{ width: `${progress}%` }} />
@@ -101,7 +103,7 @@ const AutoPlayCard = () => {
                             </div>
                         </SwiperSlide>
                     );
-                })}
+                })} 
             </Swiper>
             <div className={style.swiperContent}>
                 <p className={style.swiperContent_title}>{data[activeIndex].title}</p>

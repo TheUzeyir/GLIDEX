@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import style from "./countDownTimer.module.css";
 
 const CountdownTimer = () => {
-  const initialTime = 48 * 60 * 60; // 48 saat
+  const initialTime = 48 * 60 * 60; 
   const [timeLeft, setTimeLeft] = useState(initialTime);
 
   useEffect(() => {
@@ -30,25 +30,25 @@ const CountdownTimer = () => {
     <div className="container">
       <div className={style.timerCard_box}>
         <div className={style.timerCard_box_textCard}>
-          <p className={style.timerCard_box_card_title}>Grab it soon! Offer ends</p>
-          <p className={style.timerCard_box_card_text}>Charge up your future with an electric vehicle at the best affordable price</p>
+          <p className={style.timerCard_box_card_title}>Tezliklə götürün! Təklif başa çatır</p>
+          <p className={style.timerCard_box_card_text}>Ən sərfəli qiymətə IT kursunuzu seçərək gələcəyinizi qurun</p>
         </div>
         <div className={style.timerCard_box_card_timer}>
           <div className={style.timerCard_box_card_timer_item}>
             <p className={style.timerCard_box_card_timer_number}>{days.toString().padStart(2, '0')}</p>
-            <p className={style.timerCard_box_card_timer_label}>Days</p>
+            <p className={style.timerCard_box_card_timer_label}>Gün</p>
           </div>
           <div className={style.timerCard_box_card_timer_item}>
             <p className={style.timerCard_box_card_timer_number}>{hours.toString().padStart(2, '0')}</p>
-            <p className={style.timerCard_box_card_timer_label}>Hours</p>
+            <p className={style.timerCard_box_card_timer_label}>Saat</p>
           </div>
           <div className={style.timerCard_box_card_timer_item}>
             <p className={style.timerCard_box_card_timer_number}>{minutes.toString().padStart(2, '0')}</p>
-            <p className={style.timerCard_box_card_timer_label}>Minutes</p>
+            <p className={style.timerCard_box_card_timer_label}>Dəqiqə</p>
           </div>
           <div className={style.timerCard_box_card_timer_item}>
             <p className={style.timerCard_box_card_timer_number}>{seconds.toString().padStart(2, '0')}</p>
-            <p className={style.timerCard_box_card_timer_label}>Seconds</p>
+            <p className={style.timerCard_box_card_timer_label}>Saniyə</p>
           </div>
         </div>
       </div>

@@ -4,11 +4,11 @@ import style from "./autoIncreaseNumber.module.css";
 
 const AutoIncreaseNumber = () => {
   const counters = [
-    { id: 1, amount: 60, text: "mph", duration: 2, desc: "4-Speed Mode" },
-    { id: 2, amount: 120, text: "mi", duration: 2, desc: "Km Range" },
-    { id: 3, amount: 440, text: "lbs", duration: 2, desc: "Frame Weight" },
-    { id: 4, amount: 24, text: "kv", duration: 2, desc: "Per Charge" },
-  ];
+    { id: 1, amount: 20, text: "Mövzular", desc: "Mövzu sayı", duration: 2 },
+    { id: 2, amount: 120, text: "Şagird", desc: "Şagird sayı", duration: 2 },
+    { id: 3, amount: 40, text: " Təlimatçı", desc: "Təlimatçı sayı", duration: 2 },
+    { id: 4, amount: 24, text: " Təlimçi", desc: "Təlimçi sayı", duration: 2 },
+  ];  
 
   const containerRef = useRef(null);
   const [startAnimation, setStartAnimation] = useState(false);
@@ -39,18 +39,18 @@ const AutoIncreaseNumber = () => {
             key={counter.id}
             amount={counter.amount}
             text={counter.text}
-            duration={counter.duration}
             desc={counter.desc}
+            duration={counter.duration}
             start={startAnimation}
           />
         ))}
       </div>
       <p className={style.footerText}>
-        Are you ready to take your ride to new heights? Say goodbye to noisy
-        engines. Explore the future of transportation with our awe-inspiring
-        electric vehicle
+        Biz SkillUp IT Academy-də tələbələrin təkcə İT fənləri və ya proqramlaşdırma dilləri üzrə təlim keçmələrini,
+       təhsil almalarını deyil, həm də bu rəqabətli və dinamik dünyada bilikləri araşdırmaq və yeni imkanlar,
+        innovasiyalar yarada bilmələri üçün bacarıq əldə etmələrini təmin edirik.
       </p>
-      <button className={style.mainContainer_btn}>View shop</button>
+      <button className={style.mainContainer_btn}>Kurslara Bax</button>
     </div>
   );
 };
@@ -67,7 +67,7 @@ const Counter = ({ amount, duration, text, desc, start }:
         ease: "circOut",
         onUpdate: (latest) => {
           if (countRef.current) {
-            countRef.current.textContent = Math.round(latest).toString();
+            countRef.current.textContent = Math.round(latest).toString() + "+";
           }
         }, 
       });

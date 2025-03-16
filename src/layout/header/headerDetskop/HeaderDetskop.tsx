@@ -41,11 +41,12 @@ const HeaderDetskop = () => {
               Shop <IoIosArrowDown className={isShopClicked ? style.rotated : ""} />
             </p>
           </div>
-          <img
-            src="https://greenshift-road.myshopify.com/cdn/shop/files/GlideX_Logo.svg?v=1709810815&width=263"
+          {/* <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUkyE16XAm5jHDKwksOJ0neG2pOZwTTr4XUA&s"
             alt="Logo"
             className={style.header_logo}
-          />
+          /> */}
+          <h2 className={style.header_logo}>SkillUpIt</h2>
           <div className={style.header_right}>
             <CiSearch className={style.header_right_icon}/>
             <RxAvatar className={style.header_right_icon}/>

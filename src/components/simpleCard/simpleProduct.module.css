@@ -17,6 +17,7 @@
 
 .simpleProduct_img {
   width: 100%;
+  height: 500px;
 }
 
 @media screen and (max-width: 968px) {
@@ -28,5 +29,10 @@
     height: 350px;
     -o-object-fit: cover;
        object-fit: cover;
+  }
+}
+@media screen and (max-width: 768px) {
+  .simpleProduct_img {
+    height: 250px;
   }
 }/*# sourceMappingURL=simpleProduct.module.css.map */

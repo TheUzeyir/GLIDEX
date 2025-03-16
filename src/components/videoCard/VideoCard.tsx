@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import style from "./videoCard.module.css";
+import video from "../../assets/video/Hi-Tech Intro(1080P_HD).mp4"
 
 const VideoCard = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -41,7 +42,7 @@ const VideoCard = () => {
       <video
         ref={videoRef}
         className={style.videoCard_video}
-        src="https://greenshift-road.myshopify.com/cdn/shop/videos/c/vp/fbf110def8d14ed3ada9976700879e4e/fbf110def8d14ed3ada9976700879e4e.HD-1080p-7.2Mbps-18222980.mp4?v=0"
+        src={video}
         onEnded={() => setIsPlaying(false)}
       />
       {isMouseInVideo && (

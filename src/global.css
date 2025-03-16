@@ -104,14 +104,9 @@ ul,li{
   }
   
   .unevenSetsInfinite .slick-slide > div {
-  margin: 0 20px 0px 0px;
-}
-
-.l{
-  width:400px;
-  height: 400px;
-}
-
+    margin: 0 20px 0px 0px;
+  }
+  
 .testimonial-container {
   width: 80%;
   margin: auto;

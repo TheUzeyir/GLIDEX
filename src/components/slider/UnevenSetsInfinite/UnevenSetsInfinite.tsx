@@ -12,7 +12,8 @@ function UnevenSetsInfinite() {
     slidesToShow: 2,
     slidesToScroll: 2,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 1000,
+    arrows: false,
     responsive: [
       {
         breakpoint: 768,
@@ -27,29 +28,15 @@ function UnevenSetsInfinite() {
 
   return (
     <div className={style.slidercontainer}>
-      <h2 className={style.productCard_main_title}>Explore our best collections</h2>
-      <p className={style.productCard_main_subtitle}>Top kick scooter picks for an exhilarating ride</p>
+      <h2 className={style.productCard_main_title}>Mövcut Dərslər</h2>
       <Slider {...settings}>
         {data.map((item) => (
           <div key={item.name} className={style.slide}>
             <img src={item.image} alt={item.name} className={style.slideimg} />
             <div className={style.productCard_info}>
-                <h3 className={style.productCard_title}>{item.name}</h3>
+                <h3 className={style.productCard_title}>{item.name}</h3> 
                 <p className={style.productCard_subtitle}>{item.subtitle}</p>
-                <div className={style.productCard_info_Box}>
-                    <div className={style.productCard_info_card}>
-                        <img src={item.batteryImg} alt="Battery Icon" />
-                        <span>{item.battery}</span>   
-                    </div>
-                    <div className={style.productCard_info_card}>
-                        <img src={item.durationImg} alt="Duration Icon" />
-                        <span>{item.duration}</span>
-                    </div>
-                    <div className={style.productCard_info_card}>
-                        <img src={item.rangeImg} alt="Range Icon" />
-                        <span>{item.range}</span>
-                    </div>
-                </div>
+                <p className={style.productCard_subtitle}>Qiymət-{item.price} AZN</p>
             </div>
           </div>
         ))}

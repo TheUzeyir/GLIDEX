@@ -1,43 +1,54 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import style from "./simpleProductCardInfo.module.css";
-import data from "../../json/data.json"
+import data from "../../json/data.json"; 
+
+const shuffleArray = <T,>(array: T[]): T[] => {
+    return [...array].sort(() => Math.random() - 0.5);
+};
 
 const SimpleProductCardInfo = () => {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const [randomCourses, setRandomCourses] = useState<typeof data>([]);
+
+    useEffect(() => {
+        setRandomCourses(shuffleArray(data).slice(0, 3));
+    }, []);
+
+    const handleCardClick = (id: number) => {
+        console.log(`Clicked card ID: ${id}`);
+    };
 
     return (
         <div className={style.productCard_main}>
             <div className='container'>
-                <h2 className={style.productCard_main_title}>Explore our best collections</h2>
-                <p className={style.productCard_main_subtitle}>Top kick scooter picks for an exhilarating ride</p>
+                <h2 className={style.productCard_main_title}>Bizim ən yaxşı IT kurslarımızı kəşf et</h2>
+                <p className={style.productCard_main_subtitle}>Karyerana uyğun mükəmməl IT kursunu seç</p>
                 <div className={style.productCard_container}>
-                    {data.map((product, index) => (
+                    {randomCourses.map((course) => (
                         <div 
                             className={style.productCard} 
-                            key={product.name}
-                            onMouseEnter={() => setHoveredIndex(index)}
-                            onMouseLeave={() => setHoveredIndex(null)}
+                            key={course.id} 
+                            onClick={() => handleCardClick(course.id)}
                         >
                             <img 
-                                src={hoveredIndex === index ? product.imageHover : product.image} 
-                                alt="product" 
+                                src={course.image} 
+                                alt={course.name} 
                                 className={style.productCard_mainImg}
                             />
                             <div className={style.productCard_info}>
-                                <h3 className={style.productCard_title}>{product.name}</h3>
-                                <p className={style.productCard_subtitle}>{product.subtitle}</p>
+                                <h3 className={style.productCard_title}>{course.name}</h3>
+                                <p className={style.productCard_subtitle}>{course.subtitle}</p>
                                 <div className={style.productCard_info_Box}>
                                     <div className={style.productCard_info_card}>
-                                        <img src={product.batteryImg} alt="" />
-                                        <span>{product.battery}</span>   
+                                        <strong className={style.productCard_info_card_title}>Müddət:</strong> 
+                                        <span>{course.courseDuration}</span>   
                                     </div>
                                     <div className={style.productCard_info_card}>
-                                        <img src={product.durationImg} alt="" />
-                                        <span>{product.duration}</span>
+                                        <strong className={style.productCard_info_card_title}>Qiymət:</strong> 
+                                        <span>{course.price} AZN</span>
                                     </div>
                                     <div className={style.productCard_info_card}>
-                                        <img src={product.rangeImg} alt="" />
-                                        <span>{product.range}</span>
+                                        <strong className={style.productCard_info_card_title}>Çətinlik səviyyəsi:</strong> 
+                                        <span>{course.difficultyLevel}</span>
                                     </div>
                                 </div>
                             </div>
@@ -47,6 +58,6 @@ const SimpleProductCardInfo = () => {
             </div>
         </div>
     );
-};
+}; 
 
 export default SimpleProductCardInfo;
