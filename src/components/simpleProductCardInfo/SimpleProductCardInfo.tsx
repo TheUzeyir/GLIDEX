@@ -9,7 +9,6 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 const SimpleProductCardInfo = () => {
     const [randomCourses, setRandomCourses] = useState<typeof data>([]);
 
-    
     useEffect(() => {
         setRandomCourses(shuffleArray(data).slice(0, 3));
     }, []);
