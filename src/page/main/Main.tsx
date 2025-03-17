@@ -9,7 +9,7 @@ import HeaderDetskop from "../../layout/header/headerDetskop/HeaderDetskop";
 import HeaderResponsive from "../../layout/header/headerResponsive/HeaderResponsive";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import SimpleProductCardInfo from "../../components/simpleProductCardInfo/SimpleProductCardInfo";
+
 import CountdownTimer from "../../components/countDownTimer/CountdownTimer";
 import ScrollToTop from "../../components/scrollTop/ScrollToTop";
 import Autoplayprogress from "../../components/slider/Autoplayprogre/Autoplayprogress";
@@ -18,6 +18,7 @@ import LogoBox from "../../components/slider/logoBox/LogoBox";
 import MainPageProduct from "../../components/mainPageProduct/MainPageProduct";
 import ServiceCard from "../../components/serviceCard/ServiceCard";
 import ShopModal from "../../components/shopModal/ShopModal";
+import MainPageProductInfo from "../../components/mainPageProductInfo/MainPageProductInfo";
 
 const Main = () => {
 
@@ -54,7 +55,7 @@ const Main = () => {
         <AutoPlay/>
       </div>
       <div className="mainCard" data-aos="fade-up">
-        <SimpleProductCardInfo/>
+        <MainPageProductInfo/>
       </div>
       <div className="mainCard unevenSetsInfinite" data-aos="zoom-in">
         <UnevenSetsInfinite />
