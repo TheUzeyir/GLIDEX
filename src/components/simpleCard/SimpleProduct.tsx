@@ -1,5 +1,4 @@
 import style from './simpleProduct.module.css'
-import data from "../../json/data.json"
 
 const SimpleProduct = () => {
   return (
