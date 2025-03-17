@@ -85,5 +85,4 @@ const Counter = ({ amount, duration, text, desc, start }:
   );
 };
 
-
 export default AutoIncreaseNumber;
