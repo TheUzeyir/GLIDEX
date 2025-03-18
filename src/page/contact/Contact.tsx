@@ -4,7 +4,6 @@ import HeaderResponsive from '../../layout/header/headerResponsive/HeaderRespons
 import FooterResponsive from '../../layout/footer/footerResponsive/FooterResponsive'
 import Footer from '../../layout/footer/footerDetskop/Footer'
 import style from "./contact.module.css"
-import NewYorkMap from '../../components/map/Map'
 import Aos from "aos";
 import "aos/dist/aos.css";
 import ContackBox from "../../components/contackBox/ContackBox.module";
@@ -25,10 +24,7 @@ const Contact = () => {
       <HeaderDetskop/>
       <HeaderResponsive/>
         <div className="mainCard" data-aos="zoom-in">
-            <h2 className={style.contackPageTitle}>Contact</h2>
-        </div>
-        <div className="mainCard" data-aos="zoom-in">
-            <NewYorkMap/>
+            <h2 className={style.contackPageTitle}>Bizimlə əlaqə</h2>
         </div>
         <div className="mainCard" data-aos="zoom-in">
             <ContackBox/>

@@ -25,9 +25,10 @@
 
 @media screen and (max-width: 968px) {
   .aboutPageImgMain {
-    height: 250px;
+    height: 300px;
   }
   .aboutPageTitle {
-    padding-top: 100px;
+    top: -140px;
+    padding: 10px;
   }
 }/*# sourceMappingURL=about.module.css.map */

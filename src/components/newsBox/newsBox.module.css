@@ -1,11 +1,12 @@
 .newsBoxContainer {
-  padding: 40px;
   background-color: transparent;
+  margin-bottom: 40px;
 }
 
 .newsBoxCard {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .newsBoxTitle {
@@ -19,7 +20,6 @@
 .newsItem {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
@@ -80,4 +80,13 @@
 
 .newsItemLink:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .newsBoxCard {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .newsItemImage {
+    height: 250px;
+  }
 }/*# sourceMappingURL=newsBox.module.css.map */

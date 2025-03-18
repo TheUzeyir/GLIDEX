@@ -1,22 +1,8 @@
 .contactBoxContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin: 40px 0;
   background-color: transparent;
   color: white;
-}
-
-.contactBoxLeft h2 {
-  font-size: 24px;
-}
-
-.contactBoxLeft_subtitle {
-  font-size: 16px;
-  line-height: 25.6px;
-  line-height: 1.5;
-  margin: 20px 0 40px 0;
-  width: 80%;
-  color: #c1c1c1;
 }
 
 .contactBoxSocial {
@@ -56,57 +42,60 @@
 
 .contactBoxRight {
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  height: 80px;
 }
 
-.contactBoxRightInput,
-.contactBoxRightTextarea {
-  width: 100%;
-  padding: 20px 10px;
-  background: #424242;
-  width: 100%;
-  border-radius: 5px;
+.contactBoxRight_btnWp,
+.contactBoxRight_btnInsta {
+  padding: 15px 55px;
   font-size: 16px;
-  margin-bottom: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.contactBoxRight_btnWp {
+  background: #007BFF;
   color: white;
 }
 
-.contactBoxRightInput::-moz-placeholder {
-  color: #c1c1c1;
-}
-
-.contactBoxRightInput::placeholder {
-  color: #c1c1c1;
-}
-
-.contactBoxRightTextarea::-moz-placeholder {
-  color: #c1c1c1;
-}
-
-.contactBoxRightTextarea::placeholder {
-  color: #c1c1c1;
-}
-
-.contactBoxRightTextarea {
-  height: 150px;
-  resize: none;
-}
-
-.contactBoxRight_btn {
+.contactBoxRight_btnInsta {
   background: #2dff28;
-  padding: 15px 55px;
-  font-size: 16px;
-  border-radius: 22px;
 }
 
 @media screen and (max-width: 968px) {
   .contactBoxContainer {
     grid-template-columns: repeat(1, 1fr);
   }
-  .contactBoxLeft_subtitle {
-    width: 100%;
+  .contactBoxRight {
+    flex-direction: column;
   }
   .contactBoxRight {
-    padding: 0;
+    width: 50%;
+  }
+  .contactBoxRight_btnWp,
+  .contactBoxRight_btnInsta {
+    width: 100%;
+  }
+  .contactBoxLeft {
+    display: flex;
+    gap: 20px;
+  }
+  .contactBoxSocial {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contactBoxLeft {
+    flex-direction: column;
+  }
+  .contactBoxRight {
+    flex-direction: row;
+  }
+  .contactBoxRight {
+    width: 100%;
   }
 }/*# sourceMappingURL=contackBox.module.css.map */

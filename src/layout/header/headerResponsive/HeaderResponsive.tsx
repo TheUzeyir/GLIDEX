@@ -51,7 +51,7 @@ const HeaderResponsive = () => {
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen]); 
 
   return (
     <div className={style.header_mobile_container}>
@@ -84,7 +84,7 @@ const HeaderResponsive = () => {
             </li>
             <li className={style.sideBar_head_li} onClick={()=>navigate("/about")}>About</li>
             <li className={style.sideBar_head_li} onClick={()=>navigate("/journal")}>Journal</li>
-            <li className={style.sideBar_head_li} onClick={()=>navigate("/contack")}>Contack</li>
+            <li className={style.sideBar_head_li} onClick={()=>navigate("/contact")}>Contack</li>
           </ul>
         </div>
         <div className={style.sideBar_bottom}>

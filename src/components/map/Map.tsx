@@ -1,37 +1,69 @@
-import { MapContainer, TileLayer } from "react-leaflet";
-import { LatLngExpression } from "leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { LatLngExpression, icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-const NewYorkMap = () => {
-  const newYorkCenter: LatLngExpression = [40.7128, -74.006];
+const mallCenter: LatLngExpression = [40.3772, 49.8476];
 
-  const mobileStyle = {
-    height: "300px",
-  };
+const mallIcon = icon({
+  iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
+  iconSize: [48, 48],
+  iconAnchor: [24, 48],
+  popupAnchor: [0, -48],
+});
 
-  const defaultStyle = {
-    height: "500px",
-  };
+const openInMaps = () => {
+  const lat = 40.3772;
+  const lng = 49.8476;
+  const url =
+    /iPhone|iPad|iPod/i.test(navigator.userAgent)
+      ? `maps://maps.apple.com/?q=28+Mall&ll=${lat},${lng}`
+      : `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`; 
+
+  window.open(url, "_blank");
+};
+
+const MallMap = () => {
 
   return (
-    <MapContainer
-      center={newYorkCenter}
-      zoom={13}
-      style={{
-        width: "100%",
-        borderRadius: "10px",
-        ...(window.innerWidth <= 968 ? mobileStyle : defaultStyle),
-      }}
-      scrollWheelZoom={false}
-      doubleClickZoom={true}
-      dragging={true}
-    >
-      <TileLayer
-        url="https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
-        subdomains={["mt1", "mt2", "mt3"]}
-      />
-    </MapContainer>
+    <div style={{ textAlign: "center" }}>
+      <MapContainer
+        center={mallCenter}
+        zoom={16}
+        style={{
+          width: "100%",
+          borderRadius: "10px",
+          height: window.innerWidth <= 768 ? "200px" : "500px"
+        }}
+        scrollWheelZoom={false}
+        doubleClickZoom={true}
+        dragging={true}
+      >
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
+        <Marker position={mallCenter} icon={mallIcon}>
+          <Popup><b>28 Mall</b><br/>Baku, Azerbaijan</Popup>
+        </Marker>
+      </MapContainer>
+      <button
+        onClick={openInMaps}
+        style={{
+          marginTop: "10px",
+          marginBottom: "40px",
+          padding: "10px 20px",
+          fontSize: "16px",
+          backgroundColor: "#007BFF",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+          width: window.innerWidth <= 768 ? "100%" : "auto", 
+          maxWidth: "400px", 
+        }}
+      >
+        Telefonda Göstər 📍
+      </button>
+    </div>
   );
 };
 
-export default NewYorkMap;
+export default MallMap;

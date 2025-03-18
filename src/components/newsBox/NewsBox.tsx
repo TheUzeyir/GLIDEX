@@ -17,25 +17,27 @@ const NewsBox = () => {
   };  
 
   return (
-    <div className={styles.newsBoxContainer}>
-      <h2 className={styles.newsBoxTitle}>Mövcud Dərslər</h2>
-      <div className={styles.newsBoxCard}>
-        {currentItems.map((item) => (
-          <div key={item.name} className={styles.newsItem}>
-            <img src={item.image} alt={item.image} className={styles.newsItemImage} />
-            <h3 className={styles.newsItemTitle}>{item.name}</h3>
-            <h4 className={styles.newsItemSubtitle}>{item.subtitle}</h4>
-            <p className={styles.newsItemDesc}>{item.description}</p>
-            <a href="#" className={styles.newsItemLink}>Read more...</a>
-          </div>
-        ))}
+    <div className="container">
+      <div className={styles.newsBoxContainer}>
+        <h2 className={styles.newsBoxTitle}>Mövcud Dərslər</h2>
+        <div className={styles.newsBoxCard}>
+          {currentItems.map((item) => (
+            <div key={item.name} className={styles.newsItem}>
+              <img src={item.image} alt={item.image} className={styles.newsItemImage} />
+              <h3 className={styles.newsItemTitle}>{item.name}</h3>
+              <h4 className={styles.newsItemSubtitle}>{item.subtitle}</h4>
+              <p className={styles.newsItemDesc}>{item.description}</p>
+              <a href="#" className={styles.newsItemLink}>Read more...</a>
+            </div>
+          ))}
+        </div>
+        <Pagination
+          current={currentPage}
+          total={data.length}
+          pageSize={itemsPerPage}
+          onChange={handlePageChange}
+        />
       </div>
-      <Pagination
-        current={currentPage}
-        total={data.length}
-        pageSize={itemsPerPage}
-        onChange={handlePageChange}
-      />
     </div>
   );
 };
