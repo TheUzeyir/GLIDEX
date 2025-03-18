@@ -47,7 +47,7 @@ const MallMap = () => {
       <button
         onClick={openInMaps}
         style={{
-          marginTop: "10px",
+          marginTop: "20px",
           marginBottom: "40px",
           padding: "10px 20px",
           fontSize: "16px",
@@ -57,7 +57,6 @@ const MallMap = () => {
           borderRadius: "5px",
           cursor: "pointer",
           width: window.innerWidth <= 768 ? "100%" : "auto", 
-          maxWidth: "400px", 
         }}
       >
         Telefonda Göstər 📍

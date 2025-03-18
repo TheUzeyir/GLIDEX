@@ -99,8 +99,19 @@
     }
     .contactBoxRight{
       flex-direction: row;
+      margin-bottom: 40px;
     }
     .contactBoxRight{
       width: 100%;
+    }
+    .contactBoxSocial{
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width:500px) {
+    .contactBoxRight{
+      flex-direction: column;
+      margin-bottom: 80px;
     }
   }
