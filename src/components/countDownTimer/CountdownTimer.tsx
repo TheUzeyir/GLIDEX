@@ -12,7 +12,7 @@ const CountdownTimer = () => {
       setTimeLeft(prevTime => {
         if (prevTime <= 1) {
           clearInterval(timer);
-          return 0;
+          return 0; 
         }
         return prevTime - 1;
       });
@@ -30,8 +30,8 @@ const CountdownTimer = () => {
     <div className="container">
       <div className={style.timerCard_box}>
         <div className={style.timerCard_box_textCard}>
-          <p className={style.timerCard_box_card_title}>Tezliklə götürün! Təklif başa çatır</p>
-          <p className={style.timerCard_box_card_text}>Ən sərfəli qiymətə IT kursunuzu seçərək gələcəyinizi qurun</p>
+          <p className={`${style.timerCard_box_card_title} slideInLeft`}>Tezliklə götürün! Təklif başa çatır</p>
+          <p className={`${style.timerCard_box_card_text} slideInLeft`}>Ən sərfəli qiymətə IT kursunuzu seçərək gələcəyinizi qurun</p>
         </div>
         <div className={style.timerCard_box_card_timer}>
           <div className={style.timerCard_box_card_timer_item}>

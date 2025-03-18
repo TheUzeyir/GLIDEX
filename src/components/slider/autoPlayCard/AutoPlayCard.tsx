@@ -11,7 +11,7 @@ import style from "./autoPlay.module.css";
 const AutoPlayCard = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [progress, setProgress] = useState(0);
-
+ 
     useEffect(() => {
         const interval = setInterval(() => {
             setProgress(prev => {
@@ -87,7 +87,7 @@ const AutoPlayCard = () => {
                         <SwiperSlide key={item.id}>
                             <div className={style.slideContent}>
                                 <img src={item.img} alt="Current slide" className={style.slideContentImg} />
-                                <div className={style.slideContentTextbox}>
+                                <div className={`${style.slideContentTextbox} slideInLeft`}>
                                     <div className={style.slideContentTextboxs}>
                                         <p className={style.slideContentTextbox_title}>{item.title}</p>
                                         <p className={style.slideContentTextbox_subTitle}>{item.subTitle}</p>

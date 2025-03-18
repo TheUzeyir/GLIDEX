@@ -1,3 +1,13 @@
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .autoPlayProgress {
   color: white;
   margin-bottom: 80px;
@@ -23,12 +33,14 @@
 .slideTitle {
   color: #2dff28;
   font-size: 35px;
+  animation: slideInFromLeft 1s ease-out;
 }
 
 .slideSubtitle {
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
+  animation: slideInFromLeft 1s ease-out;
 }
 
 .slideContentBox {
@@ -47,6 +59,7 @@
 .slideContents,
 .slideId {
   color: #c1c1c1;
+  animation: slideInFromLeft 1s ease-out;
 }
 
 .slideTitles {

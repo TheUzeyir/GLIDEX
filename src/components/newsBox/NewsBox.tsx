@@ -19,7 +19,7 @@ const NewsBox = () => {
   return (
     <div className="container">
       <div className={styles.newsBoxContainer}>
-        <h2 className={styles.newsBoxTitle}>Mövcud Dərslər</h2>
+        <h2 className={`${styles.newsBoxTitle} slideInLeft`}>Mövcud Dərslər</h2>
         <div className={styles.newsBoxCard}>
           {currentItems.map((item) => (
             <div key={item.name} className={styles.newsItem}>

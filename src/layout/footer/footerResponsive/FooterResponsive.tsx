@@ -1,17 +1,31 @@
 import { useState } from "react"; 
-import { FaLocationDot, FaFacebookF } from "react-icons/fa6";
-import { BsFillTelephonePlusFill, BsTwitterX } from "react-icons/bs";
-import { BiLogoGmail, BiLogoInstagramAlt } from "react-icons/bi";
-import { LiaLocationArrowSolid } from "react-icons/lia";
+import { FaLocationDot } from "react-icons/fa6";
+import { BsFillTelephonePlusFill } from "react-icons/bs";
+import { BiLogoGmail } from "react-icons/bi";
 import style from "../footerDetskop/footer.module.scss"; 
 import { IoArrowDownCircleOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+import data from "../../../json/data.json"
 
 const FooterResponsive = () => {
+  const navigate=useNavigate()
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isCollectionsOpen, setIsCollectionsOpen] = useState(false); 
 
   const toggleAbout = () => setIsAboutOpen(!isAboutOpen);
   const toggleCollections = () => setIsCollectionsOpen(!isCollectionsOpen);
+
+  const handleNavigation = (path:string) => {
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
+  const getRandomLessons = () => {
+    const shuffled = [...data].sort(() => 0.5 - Math.random()); 
+    return shuffled.slice(0, 4); 
+  };
+
+  const randomLessons = getRandomLessons();
 
   return (
     <div className="container">
@@ -26,56 +40,43 @@ const FooterResponsive = () => {
               />
             </div>
             <div className={style.footer_description}>
-              Street offers government-certified mixed vehicles at affordable prices, ensuring quality EVs on the road.
-            </div>
-            <div className={style.footer_info}>
-              <FaLocationDot className={style.footer_icon} /> 8642 Yule Street, Arvada CO 80007
-            </div>
-            <div className={style.footer_info}>
-              <BsFillTelephonePlusFill className={style.footer_icon} /> +(248) 762-0356
-            </div>
-            <div className={style.footer_info}>
-              <BiLogoGmail className={style.footer_icon} /> support@road.com
+              SkillUpIt-Empowered by Innovation
             </div>
           </div>
           <div className={`${style.footer_links} ${isAboutOpen ? style.open : ""}`}>
           <h3 className={style.footer_links_title} onClick={toggleAbout}>
-            About us<IoArrowDownCircleOutline className={`${style.footer_links_icon} ${isAboutOpen ? style.footer_links_icon_rotate : ""}`} />
-            </h3>
+          Quick Link<IoArrowDownCircleOutline className={`${style.footer_links_icon} ${isAboutOpen ? style.footer_links_icon_rotate : ""}`} />
+            </h3> 
           <ul>
-            <li className={style.footer_link}>Our Story</li>
-            <li className={style.footer_link}>Contact</li>
-            <li className={style.footer_link}>Blogs</li>
-            <li className={style.footer_link}>FAQ</li>
+              <li className={style.footer_link} onClick={()=>handleNavigation('/about')}>About</li>
+              <li className={style.footer_link} onClick={()=>handleNavigation('/journal')}>Journal</li>
+              <li className={style.footer_link} onClick={()=>handleNavigation('/contact')}>Contack</li>
           </ul>
         </div>
         <div className={`${style.footer_links} ${isCollectionsOpen ? style.open : ""}`}>
           <h3 className={style.footer_links_title} onClick={toggleCollections}>
-            Collections <IoArrowDownCircleOutline className={`${style.footer_links_icon} ${isCollectionsOpen ? style.footer_links_icon_rotate : ""}`} />
-
+          Popular Lessons <IoArrowDownCircleOutline className={`${style.footer_links_icon} ${isCollectionsOpen ? style.footer_links_icon_rotate : ""}`} />
           </h3>
           <ul>
-            <li className={style.footer_link}>Adventure Gear</li>
-            <li className={style.footer_link}>Eco Essentials</li>
-            <li className={style.footer_link}>Scoot Accessories</li>
-            <li className={style.footer_link}>Urban Rides</li>
-          </ul>
+              {randomLessons.map((lesson, index) => (
+                <li key={index} className={style.footer_link}>
+                  {lesson.name}
+                </li>
+              ))}
+            </ul>
         </div>
-          <div className={style.footer_subscription}>
-            <h3 className={style.footer_subscription_title}>Sign up for news & Updates</h3>
-            <div className={style.footer_subscription_box}>
-              <input className={style.footer_input} type="email" placeholder="Your email address"/>
-              <LiaLocationArrowSolid className={style.footer_submit_icon} />
+        <div className={style.footer_info}>
+              <FaLocationDot className={style.footer_icon} />Az.Baku-28May
             </div>
-            <div className={style.footer_social}>
-              <BsTwitterX className={style.footer_social_icon} />
-              <FaFacebookF className={style.footer_social_icon} />
-              <BiLogoInstagramAlt className={style.footer_social_icon} />
+            <div className={style.footer_info}>
+              <BsFillTelephonePlusFill className={style.footer_icon} />+99450-797-00-44
             </div>
-          </div>
+            <div className={style.footer_info}>
+              <BiLogoGmail className={style.footer_icon} /> memmedovuzeyir797@gmail.com
+            </div>
         </div>
         <div className={style.footer_copy}>
-          Powered by Shopify © 2025, GreenShift Road
+        © 2025 SkillUpIt Academy | All rights reserved
         </div>
       </div>
     </div>

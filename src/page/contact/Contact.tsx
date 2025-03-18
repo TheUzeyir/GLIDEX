@@ -24,7 +24,7 @@ const Contact = () => {
       <HeaderDetskop/>
       <HeaderResponsive/>
         <div className="mainCard" data-aos="zoom-in">
-            <h2 className={style.contackPageTitle}>Bizimlə əlaqə</h2>
+            <h2 className={`${style.contackPageTitle} slideInLeft`}>Bizimlə əlaqə</h2>
         </div>
         <div className="mainCard" data-aos="zoom-in">
             <ContackBox/>

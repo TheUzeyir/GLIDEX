@@ -32,11 +32,10 @@
 
 .footer_description {
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 25.6px;
 }
 
-.footer_description,
 .footer_info {
   color: #BBBBBB;
 }
@@ -147,7 +146,7 @@
   .footer_wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
-  .footer_subscription {
+  .footer_description {
     margin-bottom: 20px;
   }
 }

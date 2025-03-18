@@ -18,7 +18,7 @@ export default function Autoplayprogress() {
   useEffect(() => {
     setRandomCourses(shuffleArray(jsonData).slice(0, 4));
   }, []);
-
+ 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 968);

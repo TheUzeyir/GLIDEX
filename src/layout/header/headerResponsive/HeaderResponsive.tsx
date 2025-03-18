@@ -16,6 +16,11 @@ const HeaderResponsive = () => {
   const [isSticky, setIsSticky] = useState(false);
   const navigate=useNavigate()
 
+  const handleNavigation = (path:string) => {
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 15) {
@@ -78,13 +83,13 @@ const HeaderResponsive = () => {
             <IoClose className={style.sideBar_head_closeIcon} />
           </button>
           <ul> 
-            <li className={style.sideBar_head_li} onClick={()=>navigate("/")}>Home</li>
+            <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/")}>Home</li>
             <li className={style.sideBar_head_li}>
               Shop <MdKeyboardArrowRight className={style.sideBar_head_li_icon} />
             </li>
-            <li className={style.sideBar_head_li} onClick={()=>navigate("/about")}>About</li>
-            <li className={style.sideBar_head_li} onClick={()=>navigate("/journal")}>Journal</li>
-            <li className={style.sideBar_head_li} onClick={()=>navigate("/contact")}>Contack</li>
+            <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/about")}>About</li>
+            <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/journal")}>Journal</li>
+            <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/contact")}>Contack</li>
           </ul>
         </div>
         <div className={style.sideBar_bottom}>

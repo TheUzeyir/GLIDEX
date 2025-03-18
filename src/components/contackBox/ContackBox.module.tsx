@@ -27,8 +27,8 @@ const ContackBox = () => {
                 <FaMapLocationDot />
               </div>
               <div className={style.contactBoxCardItem}>
-                <h2 className={style.contactBoxCardItemTitle}>Yerləşdiyi ərazi</h2>
-                <p className={style.contactBoxCardItemText}>Az, Baku, 28May</p>
+                <h2 className={`${style.contactBoxCardItemTitle} slideInLeft`}>Yerləşdiyi ərazi</h2>
+                <p className={`${style.contactBoxCardItemText} slideInLeft`}>Az, Baku, 28May</p>
               </div>
             </div>
             <div className={style.contactBoxCard}>
@@ -36,8 +36,8 @@ const ContackBox = () => {
                 <MdMarkEmailRead />
               </div>
               <div className={style.contactBoxCardItem}>
-                <h2 className={style.contactBoxCardItemTitle}>Email:</h2>
-                <p className={style.contactBoxCardItemText}>memmedovuzeyir797@gmail.com</p>
+                <h2 className={`${style.contactBoxCardItemTitle} slideInLeft`}>Email:</h2>
+                <p className={`${style.contactBoxCardItemText} slideInLeft`}>memmedovuzeyir797@gmail.com</p>
               </div>
             </div>
             <div className={style.contactBoxCard}>
@@ -45,16 +45,16 @@ const ContackBox = () => {
                 <FaPhoneVolume />
               </div>
               <div className={style.contactBoxCardItem}>
-                <h2 className={style.contactBoxCardItemTitle}>Əlaqə nömrəsi:</h2>
-                <p className={style.contactBoxCardItemText}>+99450-797-00-44</p>
+                <h2 className={`${style.contactBoxCardItemTitle} slideInLeft`}>Əlaqə nömrəsi:</h2>
+                <p className={`${style.contactBoxCardItemText} slideInLeft`}>+99450-797-00-44</p>
               </div>
             </div>
           </div>
             <div className={style.contactBoxRight}>
-            <button className={style.contactBoxRight_btnWp} onClick={openWhatsApp}>
+            <button className={`${style.contactBoxRight_btnWp} slideInLeft`}onClick={openWhatsApp}>
                 <FaWhatsapp style={{ marginRight: "8px" }} /> WhatsApp ilə əlaqə
             </button>
-            <button className={style.contactBoxRight_btnInsta} onClick={openInstagram}>
+            <button className={`${style.contactBoxRight_btnInsta} slideInLeft`} onClick={openInstagram}>
                 <FaInstagram style={{ marginRight: "8px" }} /> İnstagram ilə əlaqə
             </button>
             </div>

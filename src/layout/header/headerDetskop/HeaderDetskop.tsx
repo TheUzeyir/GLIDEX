@@ -12,6 +12,11 @@ const HeaderDetskop = () => {
   const [isShopClicked, setIsShopClicked] = useState(false);
   const navigate = useNavigate();
 
+  const handleNavigation = (path:string) => {
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 15);
@@ -30,10 +35,10 @@ const HeaderDetskop = () => {
       <div className="container">
         <div className={style.header}>
           <div className={style.header_left}>
-            <p className={style.header_left_item} onClick={() => navigate('/')}>Home</p>
-            <p className={style.header_left_item} onClick={() => navigate('/about')}>About</p>
-            <p className={style.header_left_item} onClick={() => navigate("/journal")}>Journal</p>
-            <p className={style.header_left_item} onClick={() => navigate('/contact')}>Contact</p>
+            <p className={style.header_left_item} onClick={() => handleNavigation('/')}>Home</p>
+            <p className={style.header_left_item} onClick={() => handleNavigation('/about')}>About</p>
+            <p className={style.header_left_item} onClick={() => handleNavigation("/journal")}>Journal</p>
+            <p className={style.header_left_item} onClick={() => handleNavigation('/contact')}>Contact</p>
             <p 
               className={style.header_left_item} 
               onClick={handleShopClick}

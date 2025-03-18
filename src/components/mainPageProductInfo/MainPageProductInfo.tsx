@@ -15,13 +15,13 @@ const MainPageProductInfo = () => {
 
     const handleCardClick = (id: number) => {
         console.log(`Clicked card ID: ${id}`);
-    };
+    };   
 
     return (
         <div className={style.productCard_main}>
             <div className='container'>
-                <h2 className={style.productCard_main_title}>Bizim ən yaxşı IT kurslarımızı kəşf et</h2>
-                <p className={style.productCard_main_subtitle}>Karyerana uyğun mükəmməl IT kursunu seç</p>
+                <h2 className={`${style.productCard_main_title} slideInLeft`}>Bizim ən yaxşı IT kurslarımızı kəşf et</h2>
+                <p className={`${style.productCard_main_subtitle} slideInLeft`}>Karyerana uyğun mükəmməl IT kursunu seç</p>
                 <div className={style.productCard_container}>
                     {randomCourses.map((course) => (
                         <div 
