@@ -9,10 +9,8 @@ import { Pagination } from "antd";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import data from "../../json/data.json";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { GoFileDirectoryFill } from "react-icons/go";
-import { GoClockFill } from "react-icons/go";
-import { FaRegMessage } from "react-icons/fa6";
+import BlogMainLeft from "./BlogMainLeft";
+import BlogMainRight from "./BlogMainRight";
 
 const Blog = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -56,62 +54,15 @@ const Blog = () => {
       </div>
       <div className="container">
         <div className={style.blogMain} data-aos="fade-up">
-          <div className={style.blogMainLeft} data-aos="fade-down">
-            {currentItems.map((item, index) => (
-              <div key={index} className={style.blogItem}>
-                <img className={style.blogMainImg} src={item.image} alt={item.image} />
-                <div className={style.blogMain_textBox}>
-                  <div className={style.blogMain_textBox_head}>
-                    <span className={style.blogMain_textBox_head_item}><GoFileDirectoryFill/> Extra Classes</span>
-                    <span className={style.blogMain_textBox_head_item}><GoClockFill/> December 12, 2024</span>
-                    <span className={style.blogMain_textBox_head_item_comment}><FaRegMessage/> No Comments</span>
-                  </div>
-                  <h2 className={style.blogMain_text}>{item.name}</h2>
-                  <span className={style.blogMain_blogMain_textBoxdesc}>Get Started React JS Tutorial For Beginners Uniquely pursue emerging 
-                    experiences before liemerging content. Efficiently underwhelm customer directed total linkage after B2C synergy. Dynamically 
-                    simplify superior human capital whereas efficient infrastructures generate business web-readiness after wireless outsourcing. 
-                    Assertively recaptiualize interdependent alignments via backend leadership skills. Monotonectally formulate focused quality
-                     vectors whereas proactive infomediaries. Energistically utilize […]</span>
-                  <button className={style.blogMain_blogMain_textBoxBtn} onClick={() => navigate(`/blog/${item.id}`)}>Read More <MdOutlineKeyboardArrowRight /></button>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className={style.blogMainRight} data-aos="fade-down">
-            <div className={style.blogMainRight_searchBox}>
-              <input className={style.blogMainRight_searchBox_input} placeholder="Seminar Axtar" type="search" />
-            </div>
-            <div className={style.blogMainRight_comingNew}>
-              <h2 className={style.blogMainRight_comingNew_title}>Gelecekde Olacaq Seminarlar</h2>
-              <div className={style.blogMainRight_comingNew_item}>
-                <img className={style.blogMainRight_comingNew_item_img} src="https://wp.rrdevs.net/edcare/wp-content/uploads/2024/12/ed-blog-11.jpg" alt="" />
-                <div className={style.blogMainRight_comingNew_item_Box}>
-                  <h3 className={style.blogMainRight_comingNew_item_title}>Student Achievement Best Practice for</h3>
-                  <p className={style.blogMainRight_comingNew_item_subtitle}><GoClockFill/> 12. Dec, 2024</p>
-                </div>
-              </div>
-              <div className={style.blogMainRight_comingNew_item}>
-                <img className={style.blogMainRight_comingNew_item_img} src="https://wp.rrdevs.net/edcare/wp-content/uploads/2024/12/ed-blog-11.jpg" alt="" />
-                <div className={style.blogMainRight_comingNew_item_Box}>
-                  <h3 className={style.blogMainRight_comingNew_item_title}>Student Achievement Best Practice for</h3>
-                  <p className={style.blogMainRight_comingNew_item_subtitle}><GoClockFill/> 12. Dec, 2024</p>
-                </div>
-              </div>
-              <div className={style.blogMainRight_comingNew_item}>
-                <img className={style.blogMainRight_comingNew_item_img} src="https://wp.rrdevs.net/edcare/wp-content/uploads/2024/12/ed-blog-11.jpg" alt="" />
-                <div className={style.blogMainRight_comingNew_item_Box}>
-                  <h3 className={style.blogMainRight_comingNew_item_title}>Student Achievement Best Practice for</h3>
-                  <p className={style.blogMainRight_comingNew_item_subtitle}><GoClockFill/> 12. Dec, 2024</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <BlogMainLeft currentItems={currentItems} />
+        <BlogMainRight/>
         </div>
       <Pagination
             current={currentPage}
             total={data.length}
             pageSize={itemsPerPage}
             onChange={handlePageChange}
+            className={style.blogMain_pagination}
       />
       </div>
       <Footer />

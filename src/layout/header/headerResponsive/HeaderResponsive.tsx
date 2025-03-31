@@ -14,20 +14,18 @@ import { useNavigate } from "react-router-dom";
 const HeaderResponsive = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const navigate=useNavigate()
+  const [isInfoOpen, setIsInfoOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const handleNavigation = (path:string) => {
+  const handleNavigation = (path: string) => {
     navigate(path);
     window.scrollTo(0, 0);
+    setIsMenuOpen(false); // Menü kapansın
   };
-  
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 15) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
+      setIsSticky(window.scrollY > 15);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -36,6 +34,10 @@ const HeaderResponsive = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleInfoMenu = () => {
+    setIsInfoOpen(!isInfoOpen);
   };
 
   useEffect(() => {
@@ -50,13 +52,12 @@ const HeaderResponsive = () => {
         setIsMenuOpen(false);
       }
     };
-    
 
     document.addEventListener("click", handleOutsideClick);
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
-  }, [isMenuOpen]); 
+  }, [isMenuOpen]);
 
   return (
     <div className={style.header_mobile_container}>
@@ -82,15 +83,26 @@ const HeaderResponsive = () => {
           <button className={style.close_button} onClick={toggleMenu}>
             <IoClose className={style.sideBar_head_closeIcon} />
           </button>
-          <ul> 
-            <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/")}>Home</li>
+          <ul>
+            <li className={style.sideBar_head_li} onClick={() => handleNavigation("/")}>Home</li>
             <li className={style.sideBar_head_li}>
               Shop <MdKeyboardArrowRight className={style.sideBar_head_li_icon} />
             </li>
-            <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/about")}>About</li>
-            <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/Courses")}>Courses</li>
-            <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/contact")}>Contack</li>
-            <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/contact")}>Information</li>
+            <li className={style.sideBar_head_li} onClick={() => handleNavigation("/about")}>About</li>
+            <li className={style.sideBar_head_li} onClick={() => handleNavigation("/Courses")}>Courses</li>
+            <li className={style.sideBar_head_li} onClick={() => handleNavigation("/contact")}>Contact</li>
+
+            {/* Information Menü */}
+            <li className={style.sideBar_head_li} onClick={toggleInfoMenu}>
+              Information 
+              <MdKeyboardArrowRight className={style.sideBar_head_li_icon} />
+            </li>
+            {/* Açılır Menü İçeriği */}
+            <ul className={`${style.sideBar_subMenu} ${isInfoOpen ? style.open : ""}`}>
+              <li className={style.sideBar_subItem} onClick={() => handleNavigation("/event")}>Event</li>
+              <li className={style.sideBar_subItem} onClick={() => handleNavigation("/instructor")}>Instructor</li>
+              <li className={style.sideBar_subItem} onClick={() => handleNavigation("/blog")}>Blog</li>
+            </ul>
           </ul>
         </div>
         <div className={style.sideBar_bottom}>

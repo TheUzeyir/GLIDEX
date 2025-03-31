@@ -13,10 +13,7 @@ import SocialButtons from './SosialBox';
 
 const Instructor = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+  const [itemsPerPage, setItemsPerPage] = useState(window.innerWidth < 768 ? 3 : 6);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,7 +23,20 @@ const Instructor = () => {
     });
   }, []);
 
-  const handlePageChange = (pageNumber:number) => {
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      setItemsPerPage(window.innerWidth < 768 ? 3 : 6);
+    };
+
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
     window.scrollTo(0, 0);
   };

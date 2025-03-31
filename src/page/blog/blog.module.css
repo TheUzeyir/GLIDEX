@@ -155,4 +155,38 @@
 
 .blogMainRight_comingNew_item_subtitle {
   padding-top: 20px;
+}
+
+.blogMain_pagination {
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .blogHeader_text {
+    font-size: 25px;
+  }
+  .blogHeader_textBox_navtext {
+    font-size: 14px;
+  }
+  .blogMain {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .blogMainLeft {
+    width: 100%;
+  }
+  .blogMainRight {
+    width: 100%;
+  }
+  .blogMainImg {
+    height: 250px;
+  }
+  .blogMainRight_comingNew_item {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .blogMainRight_comingNew_item_img {
+    width: 100%;
+    height: 100px;
+  }
 }/*# sourceMappingURL=blog.module.css.map */

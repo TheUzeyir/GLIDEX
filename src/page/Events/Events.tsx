@@ -14,7 +14,7 @@ import { IoLocationSharp } from "react-icons/io5";
 
 const Events = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const [itemsPerPage, setItemsPerPage] = useState(window.innerWidth < 768 ? 3 : 6);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
@@ -25,6 +25,15 @@ const Events = () => {
       duration: 1000, 
       once: true, 
     });
+  }, []);
+
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      setItemsPerPage(window.innerWidth < 768 ? 3 : 6);
+    };
+
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
   }, []);
 
   const handlePageChange = (pageNumber:number) => {

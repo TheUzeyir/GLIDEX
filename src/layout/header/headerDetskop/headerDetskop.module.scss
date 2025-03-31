@@ -128,6 +128,39 @@
     background-color: #1B1B1B;
   }
 
+  .sideBar_subMenu {
+    position: absolute;
+    top: 0;
+    right: 100%; /* Sağdan sola çıkması için */
+    background: white;
+    width: 200px;
+    padding: 10px;
+    list-style: none;
+    opacity: 0;
+    transform: translateX(50px); /* Başlangıçta sağda */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.sideBar_subMenu.open {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.sideBar_subItem {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.sideBar_subItem:hover {
+    background: #f5f5f5;
+}
+
+
   .sideBar_head{
     background-color: #1B1B1B;
   }
