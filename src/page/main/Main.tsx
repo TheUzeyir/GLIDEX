@@ -9,7 +9,6 @@ import HeaderDetskop from "../../layout/header/headerDetskop/HeaderDetskop";
 import HeaderResponsive from "../../layout/header/headerResponsive/HeaderResponsive";
 import Aos from "aos";
 import "aos/dist/aos.css";
-
 import CountdownTimer from "../../components/countDownTimer/CountdownTimer";
 import ScrollToTop from "../../components/scrollTop/ScrollToTop";
 import Autoplayprogress from "../../components/slider/Autoplayprogre/Autoplayprogress";

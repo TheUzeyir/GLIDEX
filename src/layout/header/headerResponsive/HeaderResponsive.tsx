@@ -88,8 +88,9 @@ const HeaderResponsive = () => {
               Shop <MdKeyboardArrowRight className={style.sideBar_head_li_icon} />
             </li>
             <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/about")}>About</li>
-            <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/journal")}>Journal</li>
+            <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/Courses")}>Courses</li>
             <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/contact")}>Contack</li>
+            <li className={style.sideBar_head_li} onClick={()=>handleNavigation("/contact")}>Information</li>
           </ul>
         </div>
         <div className={style.sideBar_bottom}>

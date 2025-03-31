@@ -141,4 +141,8 @@
   .swiperContent_btn {
     display: none;
   }
+  .slideContentTextboxs {
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+  }
 }/*# sourceMappingURL=autoPlay.module.css.map */

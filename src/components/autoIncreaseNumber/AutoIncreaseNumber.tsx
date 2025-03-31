@@ -1,8 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { animate } from "motion";
 import style from "./autoIncreaseNumber.module.css";
+import { useNavigate } from "react-router-dom";
 
 const AutoIncreaseNumber = () => {
+  const navigate = useNavigate()
+  const handleclickbtn=()=>{
+    navigate('/journal')
+    window.scroll(0,0)
+  }
   const counters = [
     { id: 1, amount: 20, text: "Mövzular", desc: "Mövzu sayı", duration: 2 },
     { id: 2, amount: 120, text: "Şagird", desc: "Şagird sayı", duration: 2 },
@@ -50,7 +56,7 @@ const AutoIncreaseNumber = () => {
        təhsil almalarını deyil, həm də bu rəqabətli və dinamik dünyada bilikləri araşdırmaq və yeni imkanlar,
         innovasiyalar yarada bilmələri üçün bacarıq əldə etmələrini təmin edirik.
       </p>
-      <button className={style.mainContainer_btn}>Kurslara Bax</button>
+      <button className={style.mainContainer_btn} onClick={handleclickbtn}>Kurslara Bax</button>
     </div>
   );
 };

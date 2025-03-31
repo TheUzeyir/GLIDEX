@@ -7,10 +7,12 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import style from "./autoPlay.module.css";
+import { useNavigate } from 'react-router-dom';
 
 const AutoPlayCard = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [progress, setProgress] = useState(0);
+    const navigate=useNavigate()
  
     useEffect(() => {
         const interval = setInterval(() => {
@@ -84,7 +86,7 @@ const AutoPlayCard = () => {
                     const nextImg = data[nextIndex].img; 
 
                     return (
-                        <SwiperSlide key={item.id}>
+                        <SwiperSlide key={item.id}> 
                             <div className={style.slideContent}>
                                 <img src={item.img} alt="Current slide" className={style.slideContentImg} />
                                 <div className={`${style.slideContentTextbox} slideInLeft`}>
@@ -93,7 +95,7 @@ const AutoPlayCard = () => {
                                         <p className={style.slideContentTextbox_subTitle}>{item.subTitle}</p>
                                         <p className={style.slideContentTextbox_item}>{item.item}</p>
                                     </div>
-                                    <button className={style.slideContentTextbox_Btn}>{item.btnText}</button>
+                                    <button onClick={()=>navigate('/journal')} className={style.slideContentTextbox_Btn}>{item.btnText}</button>
                                     <div className={style.progresscontainer}>
                                         <div className={style.progressbar} style={{ width: `${progress}%` }} />
                                         <div className={style.timer}>{Math.ceil((2 - (progress / 100) * 2)).toFixed(0)}s</div>
@@ -106,8 +108,8 @@ const AutoPlayCard = () => {
                 })} 
             </Swiper>
             <div className={style.swiperContent}>
-                <p className={style.swiperContent_title}>{data[activeIndex].title}</p>
-                <p className={style.swiperContent_subTitle}>{data[activeIndex].subTitle}</p>
+                <p className={`${style.swiperContent_title} slideInLeft`}>{data[activeIndex].title}</p>
+                <p className={`${style.swiperContent_subTitle} slideInLeft`}>{data[activeIndex].subTitle}</p>
                 <button className={style.swiperContent_btn}>{data[activeIndex].btnText}</button>
             </div>
         </div>

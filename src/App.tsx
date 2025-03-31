@@ -3,7 +3,11 @@ import './App.css'
 import Main from './page/main/Main'
 import About from './page/about/About'
 import Contact from './page/contact/Contact'
-import Journal from './page/journal/Journal'
+import Journal from './page/Courses/Journal'
+import Notfound from './page/notfound/Notfound'
+import Events from './page/Events/Events'
+import Instructor from './page/instructor/Instructor'
+import Blog from './page/blog/Blog'
 
 function App() {
 
@@ -13,7 +17,11 @@ function App() {
         <Route path='/' element={<Main/>}/>
         <Route path='/about' element={<About  />}/>
         <Route path='/contact' element={<Contact  />}/>
-        <Route path='/journal' element={<Journal  />}/>
+        <Route path='/Courses' element={<Journal  />}/>
+        <Route path='/event' element={<Events/>}/>
+        <Route path='/Instructor' element={<Instructor/>}/>
+        <Route path='/blog' element={<Blog/>}/>
+        <Route path='*' element={<Notfound/>}/>
       </Routes>
     </BrowserRouter>
   )

@@ -1,0 +1,114 @@
+.instructorHeader {
+  position: relative;
+  color: #2dff28;
+}
+
+.instructorHeaderImg {
+  width: 100%;
+  height: 350px;
+}
+
+.instructorHeader_text,
+.instructorHeader_textBox_navtext {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: 10px;
+  border-radius: 6px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.instructorHeader_text {
+  top: 50%;
+  font-size: 35px;
+  left: 25%;
+}
+
+.instructorHeader_textBox_navtext {
+  left: 22.5%;
+  font-size: 18px;
+  font-weight: bold;
+  bottom: 20%;
+}
+
+.instructorHeader_textBox_navtext_title {
+  color: white;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.instructorHeader_textBox_navtext_title:hover {
+  color: red;
+}
+
+.instructorHeader_textBox_navtext_subtitle {
+  padding-left: 5px;
+}
+
+.instructorContainer {
+  margin-bottom: 40px;
+}
+
+.instructorBoxCard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  color: white;
+  margin: 40px 0;
+}
+
+.instructorItem {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.instructorItem:hover {
+  transform: translateY(-10px);
+}
+
+.instructorItemImage {
+  width: 100%;
+  height: 300px;
+}
+
+.instructorItemContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  position: absolute;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  width: 96%;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 10px;
+  bottom: 0%;
+}
+
+.instructorItemContent_textBox_subtitle {
+  color: #c1c1c1;
+}
+
+@media screen and (max-width: 768px) {
+  .instructorBoxCard {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .newsItemImage {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .instructorHeader_text {
+    font-size: 25px;
+    left: 50%;
+    width: 100%;
+  }
+  .instructorHeader_textBox_navtext {
+    left: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    bottom: 20%;
+    width: 100%;
+  }
+}/*# sourceMappingURL=instructor.module.css.map */

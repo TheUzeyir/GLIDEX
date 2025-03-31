@@ -31,9 +31,10 @@
 }
 
 .footer_description {
-  margin-top: 20px;
+  margin: 40px 0;
   font-size: 18px;
   line-height: 25.6px;
+  color: white;
 }
 
 .footer_info {

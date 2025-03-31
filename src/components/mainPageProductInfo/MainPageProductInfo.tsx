@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import style from "./mainPageProductInfo.module.css";
 import data from "../../json/data.json"; 
+import { useNavigate } from 'react-router-dom';
 
 const shuffleArray = <T,>(array: T[]): T[] => {
     return [...array].sort(() => Math.random() - 0.5);
 };
 
 const MainPageProductInfo = () => {
+    const navigate=useNavigate()
     const [randomCourses, setRandomCourses] = useState<typeof data>([]);
 
     useEffect(() => {
@@ -15,6 +17,7 @@ const MainPageProductInfo = () => {
 
     const handleCardClick = (id: number) => {
         console.log(`Clicked card ID: ${id}`);
+        navigate('/')
     };   
 
     return (

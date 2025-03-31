@@ -49,7 +49,7 @@ const FooterResponsive = () => {
             </h3> 
           <ul>
               <li className={style.footer_link} onClick={()=>handleNavigation('/about')}>About</li>
-              <li className={style.footer_link} onClick={()=>handleNavigation('/journal')}>Journal</li>
+              <li className={style.footer_link} onClick={()=>handleNavigation('/Courses')}>Courses</li>
               <li className={style.footer_link} onClick={()=>handleNavigation('/contact')}>Contack</li>
           </ul>
         </div>

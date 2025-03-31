@@ -30,8 +30,8 @@ const Journal = () => {
             <div className={style.journal_headBox}>
                 <img className={style.journal_img} src="https://t3.ftcdn.net/jpg/10/80/73/84/360_F_1080738448_W6RJ0M8UzVDw3TtguPZlzhTHv6IUifLQ.jpg" alt="" />
                 <div className={style.journal_headBox_textBox}>
-                    <h2 className={`${style.journal_headBox_textBox_title} slideInLeft`}>News</h2>
-                    <p className={`${style.journal_headBox_textBox_item} slideInLeft`}><span onClick={()=>navigate("/")} className={style.journal_headBox_textBox_item_navText}>Home</span> <MdKeyboardArrowRight/> News</p>
+                    <h2 className={`${style.journal_headBox_textBox_title} slideInLeft`}>Courses</h2>
+                    <p className={`${style.journal_headBox_textBox_item} slideInLeft`}><span onClick={()=>navigate("/")} className={style.journal_headBox_textBox_item_navText}>Home</span> <MdKeyboardArrowRight/> Courses</p>
                 </div>
             </div>
         </div>

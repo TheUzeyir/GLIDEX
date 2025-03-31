@@ -37,13 +37,13 @@ const HeaderDetskop = () => {
           <div className={style.header_left}>
             <p className={style.header_left_item} onClick={() => handleNavigation('/')}>Home</p>
             <p className={style.header_left_item} onClick={() => handleNavigation('/about')}>About</p>
-            <p className={style.header_left_item} onClick={() => handleNavigation("/journal")}>Journal</p>
+            <p className={style.header_left_item} onClick={() => handleNavigation("/Courses")}>Courses</p>
             <p className={style.header_left_item} onClick={() => handleNavigation('/contact')}>Contact</p>
             <p 
               className={style.header_left_item} 
               onClick={handleShopClick}
             >
-              Shop <IoIosArrowDown className={isShopClicked ? style.rotated : ""} />
+              Information <IoIosArrowDown className={isShopClicked ? style.rotated : ""} />
             </p>
           </div>
           {/* <img
@@ -64,4 +64,4 @@ const HeaderDetskop = () => {
   );
 };
 
-export default HeaderDetskop;
+export default HeaderDetskop; 
