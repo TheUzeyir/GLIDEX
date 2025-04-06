@@ -1,6 +1,11 @@
-@charset "UTF-8";
-.header_container,
 .header_mobile_container {
+  width: 100%;
+  position: absolute;
+  z-index: 155;
+  transition: all 0.3s ease-in-out;
+}
+
+.header_container {
   width: 100%;
   position: absolute;
   z-index: 155;
@@ -24,7 +29,7 @@
   transform: translateY(-20px);
   animation: slideDown 1.5s forwards ease-in-out;
   -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px); /* Blur effekti */
+          backdrop-filter: blur(10px);
 }
 
 @keyframes slideDown {
@@ -121,7 +126,7 @@
   top: 0;
   left: 0;
   width: 300px;
-  height: 100%;
+  height: 100vh;
   color: white;
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
@@ -129,39 +134,8 @@
   background-color: #1B1B1B;
 }
 
-.sideBar_subMenu {
-  position: absolute;
-  top: 0;
-  right: 100%; /* Sağdan sola çıkması için */
-  background: white;
-  width: 200px;
-  padding: 10px;
-  list-style: none;
-  opacity: 0;
-  transform: translateX(50px); /* Başlangıçta sağda */
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  pointer-events: none;
-}
-
-.sideBar_subMenu.open {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-}
-
-.sideBar_subItem {
-  padding: 10px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.sideBar_subItem:hover {
-  background: #f5f5f5;
-}
-
-.sideBar_head {
+.sideBar_head,
+.sideBar_head_Information {
   background-color: #1B1B1B;
 }
 
@@ -177,21 +151,17 @@
   justify-content: space-between;
 }
 
-.sideBar_bottom,
-.sidebar_social {
+.sideBar_bottom {
   background-color: #222222;
   width: 100%;
-}
-
-.sideBar_bottom {
   position: absolute;
-  bottom: 7%;
+  bottom: 60px;
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 .sidebar li {
@@ -214,9 +184,13 @@
   left: 15px;
   background: none;
   border: none;
-  font-size: 24px;
   color: white;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .sideBar_login {
@@ -284,9 +258,6 @@
   }
   .header_logo {
     left: 20%;
-  }
-  .sidebar {
-    height: 100%;
   }
 }
 @media screen and (max-width: 520px) {
