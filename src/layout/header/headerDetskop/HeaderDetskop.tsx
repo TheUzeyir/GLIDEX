@@ -55,7 +55,7 @@ const HeaderDetskop = () => {
           <div className={style.header_right}>
             <CiSearch className={style.header_right_icon}/>
             <RxAvatar className={style.header_right_icon}/>
-            <MdOutlineShoppingBag className={style.header_right_icon}/>
+            <MdOutlineShoppingBag className={style.header_right_icon} onClick={() => handleNavigation('/likedItems')}/>
           </div>
         </div>
       </div>

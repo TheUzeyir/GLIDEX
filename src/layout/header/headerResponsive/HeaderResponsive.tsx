@@ -81,7 +81,7 @@ const HeaderResponsive = () => {
             />
             <MdOutlineShoppingBag
               className={style.header_right_icon}
-              onClick={() => handleNavigation("/cart")}
+              onClick={() => handleNavigation('/likedItems')}
             />
             <FaBarsStaggered
               className={style.header_barIcon}

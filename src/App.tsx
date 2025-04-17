@@ -8,6 +8,8 @@ import Notfound from './page/notfound/Notfound'
 import Events from './page/Events/Events'
 import Instructor from './page/instructor/Instructor'
 import Blog from './page/blog/Blog'
+import LikedItems from './page/likedItems/likedItems'
+import { SignIn, SignUp } from '@clerk/clerk-react'
 
 function App() {
 
@@ -21,6 +23,9 @@ function App() {
         <Route path='/event' element={<Events/>}/>
         <Route path='/Instructor' element={<Instructor/>}/>
         <Route path='/blog' element={<Blog/>}/>
+        <Route path='/likedItems' element={<LikedItems/>}/>
+        <Route path='/signIn' element={<SignIn/>}/>
+        <Route path='/signUp' element={<SignUp/>}/>
         <Route path='*' element={<Notfound/>}/>
       </Routes>
     </BrowserRouter>
