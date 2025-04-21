@@ -4,9 +4,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import style from './logoBox.module.css';
 import data from "../../../json/data.json"
+import { useNavigate } from 'react-router-dom';
 
 function LogoBox() {
   const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigate = (id: number) => {
+    navigate(`/detail-info/${id}`);
+    window.scrollTo(0, 0);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -59,7 +66,12 @@ function LogoBox() {
       <div className="sliderContainers">
         <Slider {...sliderSettings}>
           {data.map((item) => (
-            <div key={item.name} className={style.logoBoxItem}>
+            <div  
+              key={item.name} 
+              className={style.logoBoxItem}
+              onClick={() => handleNavigate(item.id)}
+              style={{ cursor: 'pointer' }}
+            >
               <img src={item.image} alt="Product" className={style.productImage} />
               <p className={style.logoText}>{item.name}</p>
             </div>

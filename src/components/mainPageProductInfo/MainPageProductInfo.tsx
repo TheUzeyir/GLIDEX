@@ -16,9 +16,9 @@ const MainPageProductInfo = () => {
     }, []);
 
     const handleCardClick = (id: number) => {
-        console.log(`Clicked card ID: ${id}`);
-        navigate('/')
-    };   
+        navigate(`/detail-info/${id}`);
+        window.scrollTo(0, 0);
+    };    
 
     return (
         <div className={style.productCard_main}>

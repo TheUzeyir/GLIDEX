@@ -10,6 +10,7 @@ import Instructor from './page/instructor/Instructor'
 import Blog from './page/blog/Blog'
 import LikedItems from './page/likedItems/LikedItems'
 import { SignIn, SignUp } from '@clerk/clerk-react'
+import DetailInfo from './page/detailInfo/DetailInfo'
 
 function App() { 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/Instructor' element={<Instructor/>}/>
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/likedItems' element={<LikedItems/>}/>
+        <Route path="/detail-info/:id" element={<DetailInfo/>}/>
         <Route path='/signIn' element={
           <div className="centered-auth">
           <SignIn />

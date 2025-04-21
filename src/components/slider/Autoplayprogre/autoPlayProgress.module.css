@@ -16,6 +16,7 @@
 .slideImage {
   height: 550px;
   width: 100%;
+  cursor: pointer;
 }
 
 .slideTextBox {
@@ -53,6 +54,7 @@
 .slideTextBoxs {
   padding-left: 10px;
   border-left: 3px solid gray;
+  cursor: pointer;
 }
 
 .slideTitles,

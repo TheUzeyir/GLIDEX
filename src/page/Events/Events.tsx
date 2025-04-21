@@ -20,6 +20,11 @@ const Events = () => {
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
   const navigate = useNavigate();
 
+  const handleNavigate = (id: number) => {
+    navigate(`/detail-info/${id}`);
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => { 
     Aos.init({
       duration: 1000, 
@@ -31,7 +36,7 @@ const Events = () => {
     const updateItemsPerPage = () => {
       setItemsPerPage(window.innerWidth < 768 ? 3 : 6);
     };
-
+ 
     window.addEventListener("resize", updateItemsPerPage);
     return () => window.removeEventListener("resize", updateItemsPerPage);
   }, []);
@@ -58,7 +63,7 @@ const Events = () => {
         <div className={style.eventContainer}>
           <div className={style.eventBoxCard}>
             {currentItems.map((item, index) => (
-              <div key={item.name} className={style.eventItem} data-aos="fade-up" data-aos-delay={index * 100}>
+              <div key={item.name} className={style.eventItem} data-aos="fade-up" data-aos-delay={index * 100} onClick={() => handleNavigate(item.id)}>
                 <img src={item.image} alt={item.image} className={style.eventItemImage} />
                 <h3 className={style.eventItemDate}>16-Oct</h3>
                 <h3 className={style.eventItemDatetitle}><FaRegClock />08:00 AM-10:00 AM</h3>

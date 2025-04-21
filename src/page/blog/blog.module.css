@@ -161,6 +161,10 @@
   margin-bottom: 50px;
 }
 
+.blogItem{
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   .blogHeader_text {
     font-size: 25px;

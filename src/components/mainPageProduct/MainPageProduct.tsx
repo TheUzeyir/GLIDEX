@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { addLikedProduct } from "../../store/likedSlice";
 import ToastAlert from "../../alert/AddProductAlert"; 
 import { useUser } from "@clerk/clerk-react";
+import { useNavigate } from 'react-router-dom';
 
 interface LikedProduct {
   id: number;
@@ -14,11 +15,16 @@ interface LikedProduct {
   price: string; 
   description: string;
   difficultyLevel: string;
-}
+} 
 
 const MainPageProduct = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { user } = useUser();
+  const handleNavigate = (id: number) => {
+    navigate(`/detail-info/${id}`);
+    window.scrollTo(0, 0);
+  };
 
   const randomItem = useMemo(() => {
     const randomIndex = Math.floor(Math.random() * data.length);
@@ -103,7 +109,7 @@ const MainPageProduct = () => {
             >
               Favorilərə əlavə et
             </button>
-            <button className={style.mainPageProduct__details_btnBox_btn_view}>
+            <button className={style.mainPageProduct__details_btnBox_btn_view} onClick={() => handleNavigate(randomItem.id)}>
               Data ətrafı məlumat al<MdKeyboardArrowRight />
             </button>
           </div>

@@ -18,10 +18,15 @@ interface BlogItem {
 const BlogMainLeft:React.FC<BlogMainLeftProps> = ({ currentItems }) => {
   const navigate = useNavigate();
 
+  const handleNavigate = (id: number) => {
+    navigate(`/detail-info/${id}`);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className={style.blogMainLeft} data-aos="fade-down">
       {currentItems.map((item, index) => (
-        <div key={index} className={style.blogItem}>
+        <div key={index} className={style.blogItem}  onClick={() => handleNavigate(item.id)}>
           <img className={style.blogMainImg} src={item.image} alt={item.image} />
           <div className={style.blogMain_textBox}>
             <div className={style.blogMain_textBox_head}>

@@ -1,3 +1,21 @@
+.detailInfo{
+    padding-top: 100px;
+}
+
+.detailInfoGoback{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.detailInfoGoback:hover{
+    color: red;
+    text-decoration: underline;
+}
+
 .mainPageProduct {
     color: white;
     display: grid;
@@ -187,4 +205,4 @@
   .mainPageProduct__powerOption{
     width: 100%;
   }
-} 
+}

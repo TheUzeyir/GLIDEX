@@ -5,6 +5,7 @@ import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
 import style from "./autoPlayProgress.module.css";
 import jsonData from "../../../json/data.json";
+import { useNavigate } from "react-router-dom";
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   return [...array].sort(() => Math.random() - 0.5);
@@ -14,6 +15,11 @@ export default function Autoplayprogress() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [randomCourses, setRandomCourses] = useState<typeof jsonData>([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 968);
+  const navigate = useNavigate();
+  const handleNavigate = (id: number) => {
+    navigate(`/detail-info/${id}`);
+    window.scrollTo(0, 0);
+  };
 
   useEffect(() => {
     setRandomCourses(shuffleArray(jsonData).slice(0, 4));
@@ -53,7 +59,7 @@ export default function Autoplayprogress() {
       >
         {randomCourses.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className={style.slideContent}>
+            <div className={style.slideContent} onClick={() => handleNavigate(item.id)}>
               <img src={item.image} alt={item.name} className={style.slideImage} />
               <div className={style.slideTextBox}>
                 <h2 className={style.slideTitle}>{item.name}</h2>
@@ -86,6 +92,7 @@ export default function Autoplayprogress() {
                   activeIndex === index ? style.activeSlide : ""
                 }`}
                 key={index}
+                onClick={() => handleNavigate(item.id)}
               >
                 <h2 className={style.slideTitles}>{item.name}</h2>
                 <p className={style.slideContents}>{item.description}</p>
