@@ -85,6 +85,7 @@
 .header_right_icon {
   font-size: 22px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .header_barIcon {
@@ -193,7 +194,7 @@
   margin-top: 20px;
 }
 
-.sideBar_login {
+.sideBar_login, .sideBar_logout {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -228,6 +229,35 @@
 .rotated {
   transform: rotate(180deg);
   transition: transform 0.2s ease-in-out;
+}
+
+.header_right_icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.responsive_badge {
+  position: absolute;
+  top: -6px;
+  right: 25px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 1080px) {

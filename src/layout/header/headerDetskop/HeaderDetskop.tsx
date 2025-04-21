@@ -6,15 +6,29 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 import style from "./headerDetskop.module.scss";
 import { useNavigate } from "react-router-dom";
 import ShopModal from "../../../components/shopModal/ShopModal"; 
+import UserCard from "../headerUserCard/UserCard";
+import { useUser } from "@clerk/clerk-react";
+import { useSelector } from "react-redux";
+import { selectLikedProducts } from "../../../store/likedSlice";
+
 
 const HeaderDetskop = () => { 
   const [isSticky, setIsSticky] = useState(false);
   const [isShopClicked, setIsShopClicked] = useState(false);
+  const [isUserCardVisible, setIsUserCardVisible] = useState(false);
   const navigate = useNavigate();
+  const { user } = useUser();
+
+  const likedProducts = useSelector(selectLikedProducts);
+  const likedCount = likedProducts.length;
 
   const handleNavigation = (path:string) => {
     navigate(path);
     window.scrollTo(0, 0);
+  };
+
+  const handleUserIconClick = () => {
+    setIsUserCardVisible(prev => !prev);
   };
 
   useEffect(() => {
@@ -30,6 +44,14 @@ const HeaderDetskop = () => {
     setIsShopClicked(prev => !prev); 
   };
 
+  const handleLikedItemsClick = () => {
+    if (user) {
+      navigate('/likedItems');
+    } else {
+      navigate('/signIn'); 
+    }
+  };
+
   return (
     <div className={`${style.header_container} ${isSticky ? style.sticky : ""}`}>
       <div className="container">
@@ -42,7 +64,7 @@ const HeaderDetskop = () => {
             <p 
               className={style.header_left_item} 
               onClick={handleShopClick}
-            >
+            > 
               Information <IoIosArrowDown className={isShopClicked ? style.rotated : ""} />
             </p>
           </div>
@@ -54,12 +76,18 @@ const HeaderDetskop = () => {
           <h2 className={style.header_logo}>SkillUpIt</h2>
           <div className={style.header_right}>
             <CiSearch className={style.header_right_icon}/>
-            <RxAvatar className={style.header_right_icon}/>
-            <MdOutlineShoppingBag className={style.header_right_icon} onClick={() => handleNavigation('/likedItems')}/>
+            <RxAvatar className={style.header_right_icon} onClick={handleUserIconClick}/>
+            <div className={style.header_right_icon} onClick={handleLikedItemsClick}>
+              <MdOutlineShoppingBag className={style.header_right_icon} />
+              {likedCount > 0 && (
+                <span className={style.badge}>{likedCount}</span>
+              )}
+            </div>
           </div>
         </div>
       </div>
       <ShopModal isVisible={isShopClicked} />
+      {isUserCardVisible && <UserCard />}
     </div>
   );
 };

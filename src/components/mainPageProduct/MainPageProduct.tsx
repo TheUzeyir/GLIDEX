@@ -1,13 +1,25 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import data from "../../json/data.json";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import style from "./mainPageProduct.module.css";
 import { useDispatch } from "react-redux";
 import { addLikedProduct } from "../../store/likedSlice";
 import ToastAlert from "../../alert/AddProductAlert"; 
+import { useUser } from "@clerk/clerk-react";
+
+interface LikedProduct {
+  id: number;
+  name: string;
+  image: string;
+  price: string; 
+  description: string;
+  difficultyLevel: string;
+}
 
 const MainPageProduct = () => {
   const dispatch = useDispatch();
+  const { user } = useUser();
+
   const randomItem = useMemo(() => {
     const randomIndex = Math.floor(Math.random() * data.length);
     return data[randomIndex];
@@ -21,17 +33,38 @@ const MainPageProduct = () => {
   };
 
   const addToFavorite = () => {
-    dispatch(addLikedProduct({
+    if (!user) {
+      window.location.href = "/signIn"; 
+      return;
+    }
+
+    const storedFavorites: LikedProduct[] = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+    const newFavorite: LikedProduct = {
       id: randomItem.id,
       name: randomItem.name,
       image: randomItem.image,
-      price: randomItem.price,
+      price: randomItem.price.toString(),  
       description: randomItem.description,
       difficultyLevel: randomItem.difficultyLevel,
-    }));
-  
-    setShowToast(true); 
+    };
+
+    const updatedFavorites = [...storedFavorites, newFavorite];
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+
+    dispatch(addLikedProduct(newFavorite));
+
+    setShowToast(true);
   };
+
+  useEffect(() => {
+    const storedFavorites: LikedProduct[] = JSON.parse(localStorage.getItem("favorites") || "[]");
+    if (storedFavorites.length > 0) {
+      storedFavorites.forEach((product: LikedProduct) => {
+        dispatch(addLikedProduct(product));
+      });
+    }
+  }, [dispatch]);
 
   return (
     <div className="container">

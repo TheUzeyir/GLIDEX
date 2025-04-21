@@ -10,12 +10,20 @@ import { BsTwitterX } from "react-icons/bs";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { MdKeyboardArrowRight, MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { useUser,useClerk } from "@clerk/clerk-react";
+import { CiLogout } from "react-icons/ci";
+import { useSelector } from "react-redux";
+import { selectLikedProducts } from "../../../store/likedSlice";
 
 const HeaderResponsive = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isInfoVisible, setIsInfoVisible] = useState(false);
   const navigate = useNavigate();
+  const { user } = useUser();
+  const { signOut } = useClerk();
+  const likedProducts = useSelector(selectLikedProducts);
+  const likedCount = likedProducts.length;
 
   const toggleInfo = (event: React.MouseEvent) => {
     event.stopPropagation();
@@ -63,6 +71,15 @@ const HeaderResponsive = () => {
     };
   }, [isMenuOpen, isInfoVisible]);
 
+  const handleLikedClick = () => {
+    if (user) {
+      navigate("/likedItems");
+    } else {
+      navigate("/signIn");
+    }
+  };
+  
+
   return (
     <div className={style.header_mobile_container}>
       <div className={`${style.header_mobile} ${isSticky ? style.sticky : ""}`}>
@@ -72,17 +89,19 @@ const HeaderResponsive = () => {
             alt="Logo"
             className={style.header_logo}
             onClick={() => handleNavigation("/")}
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer" }} 
           />
           <div className={style.header_mobile_right}>
             <CiSearch
               className={style.header_right_icon}
               onClick={() => handleNavigation("/search")}
             />
-            <MdOutlineShoppingBag
-              className={style.header_right_icon}
-              onClick={() => handleNavigation('/likedItems')}
-            />
+            <div className={style.header_right_icon_wrapper} onClick={handleLikedClick}>
+              <MdOutlineShoppingBag className={style.header_right_icon} />
+              {user && likedCount > 0 && (
+                <span className={style.responsive_badge}>{likedCount}</span>
+              )}
+            </div>
             <FaBarsStaggered
               className={style.header_barIcon}
               onClick={toggleMenu}
@@ -126,12 +145,28 @@ const HeaderResponsive = () => {
         <div className={style.sideBar_bottom}>
           <div
             className={style.sideBar_login}
-            onClick={() => handleNavigation("/login")}
+            onClick={() => {
+              if (user) {
+                navigate("/"); 
+              } else {
+                navigate("/signIn");
+              }
+            }}
             style={{ cursor: "pointer" }}
           >
             <RxAvatar className={style.sideBar_login_icon} />
-            <p>Login</p>
+            <p>{user ? user.fullName : "Login"}</p>
           </div>
+          {user && (
+            <div
+              className={style.sideBar_logout}
+              onClick={() => signOut(() => navigate("/"))}
+              style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: "8px", marginTop: "12px", color: "red" }}
+            >
+              <CiLogout className={style.sideBar_login_icon} />
+              <p>Çıxış</p>
+            </div>
+          )}
           <div className={style.sidebar_social}>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
               <BsTwitterX className={style.sidebar_social_icon} />

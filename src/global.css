@@ -283,6 +283,13 @@ ul,li{
   box-shadow: 5px 5px 12px #cacaca, -5px -5px 12px #ffffff;
 }
 
+.centered-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 
 @media screen and (max-width: 768px){
     .container{

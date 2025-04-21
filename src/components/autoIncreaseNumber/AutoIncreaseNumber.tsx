@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const AutoIncreaseNumber = () => {
   const navigate = useNavigate()
   const handleclickbtn=()=>{
-    navigate('/journal')
+    navigate('/Courses')
     window.scroll(0,0)
   }
   const counters = [
