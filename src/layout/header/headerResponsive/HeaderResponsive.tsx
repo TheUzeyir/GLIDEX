@@ -14,16 +14,22 @@ import { useUser,useClerk } from "@clerk/clerk-react";
 import { CiLogout } from "react-icons/ci";
 import { useSelector } from "react-redux";
 import { selectLikedProducts } from "../../../store/likedSlice";
+import SearchModal from "../searchModal/SearchModal";
 
 const HeaderResponsive = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [isInfoVisible, setIsInfoVisible] = useState(false);
   const navigate = useNavigate();
   const { user } = useUser();
   const { signOut } = useClerk();
   const likedProducts = useSelector(selectLikedProducts);
   const likedCount = likedProducts.length;
+
+  const handleSearchToggle = () => {
+    setIsSearchVisible(prev => !prev);
+  };
 
   const toggleInfo = (event: React.MouseEvent) => {
     event.stopPropagation();
@@ -78,7 +84,6 @@ const HeaderResponsive = () => {
       navigate("/signIn");
     }
   };
-  
 
   return (
     <div className={style.header_mobile_container}>
@@ -94,7 +99,7 @@ const HeaderResponsive = () => {
           <div className={style.header_mobile_right}>
             <CiSearch
               className={style.header_right_icon}
-              onClick={() => handleNavigation("/search")}
+              onClick={handleSearchToggle} 
             />
             <div className={style.header_right_icon_wrapper} onClick={handleLikedClick}>
               <MdOutlineShoppingBag className={style.header_right_icon} />
@@ -180,6 +185,7 @@ const HeaderResponsive = () => {
           </div>
         </div>
       </div>
+      <SearchModal isVisible={isSearchVisible} onClose={handleSearchToggle} />
     </div>
   );
 };

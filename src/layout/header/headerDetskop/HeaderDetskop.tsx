@@ -10,12 +10,13 @@ import UserCard from "../headerUserCard/UserCard";
 import { useUser } from "@clerk/clerk-react";
 import { useSelector } from "react-redux";
 import { selectLikedProducts } from "../../../store/likedSlice";
-
+import SearchModal from "../searchModal/SearchModal";
 
 const HeaderDetskop = () => { 
   const [isSticky, setIsSticky] = useState(false);
   const [isShopClicked, setIsShopClicked] = useState(false);
   const [isUserCardVisible, setIsUserCardVisible] = useState(false);
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
   const navigate = useNavigate();
   const { user } = useUser();
 
@@ -52,6 +53,10 @@ const HeaderDetskop = () => {
     }
   };
 
+  const handleSearchToggle = () => {
+    setIsSearchVisible(prev => !prev);
+  };
+  
   return (
     <div className={`${style.header_container} ${isSticky ? style.sticky : ""}`}>
       <div className="container">
@@ -75,7 +80,7 @@ const HeaderDetskop = () => {
           /> */}
           <h2 className={style.header_logo}>SkillUpIt</h2>
           <div className={style.header_right}>
-            <CiSearch className={style.header_right_icon}/>
+            <CiSearch className={style.header_right_icon} onClick={handleSearchToggle} />
             <RxAvatar className={style.header_right_icon} onClick={handleUserIconClick}/>
             <div className={style.header_right_icon} onClick={handleLikedItemsClick}>
               <MdOutlineShoppingBag className={style.header_right_icon} />
@@ -87,6 +92,7 @@ const HeaderDetskop = () => {
         </div>
       </div>
       <ShopModal isVisible={isShopClicked} />
+      <SearchModal isVisible={isSearchVisible} onClose={handleSearchToggle} />
       {isUserCardVisible && <UserCard />}
     </div>
   );

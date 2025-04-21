@@ -11,7 +11,7 @@ import Blog from './page/blog/Blog'
 import LikedItems from './page/likedItems/LikedItems'
 import { SignIn, SignUp } from '@clerk/clerk-react'
 
-function App() {
+function App() { 
 
   return (
     <BrowserRouter>    
