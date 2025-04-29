@@ -14,7 +14,7 @@ interface Product {
 const LikedItems = () => {
   const likedProducts: Product[] = useSelector(selectLikedProducts);
   const dispatch = useDispatch();
-  const nabivate = useNavigate()
+  const navigate = useNavigate()
 
   const handleRemove = (id: number) => {
     dispatch(removeLikedProduct(id));
@@ -28,7 +28,7 @@ const LikedItems = () => {
   return (
     <div className={style.likedItem}>
       <div className="container">
-        <p onClick={()=>nabivate(-1)} className={style.likedItem_goBack}><IoChevronBackOutline/>Geri dön</p>
+        <p onClick={()=>navigate(-1)} className={style.likedItem_goBack}><IoChevronBackOutline/>Geri dön</p>
         <h2>Bəyənilmiş Məhsullar</h2>
         {likedProducts.length === 0 ? (
           <p>Heç bir bəyənilmiş məhsul yoxdur</p>
@@ -55,7 +55,10 @@ const LikedItems = () => {
                       <p className={style.flipcardback_textBoxtitle}>{product.name}</p>
                       <p className={style.flipcardback_textBoxsubtitle}>{product.price}-AZN</p>
                       <div className={style.flipcardback_textBox_btnCard}>
-                        <button className={style.flipcardback_textBox_btnCard_btn}>
+                      <button
+                          className={style.flipcardback_textBox_btnCard_btn}
+                          onClick={() => navigate(`/detail-info/${product.id}`)}
+                        >
                           Ətraflı məlumat
                         </button>
                         <button 
