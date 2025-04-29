@@ -58,6 +58,17 @@
   width: 150px;
   height: auto;
   max-width: 100%;
+  color: white;
+}
+
+.header_logo_res {
+  font-weight: bold;
+  position: absolute;
+  transform: translateX(20%);
+  transform: translateY(-40%);
+  width: 100px;
+  height: auto;
+  color: white;
 }
 
 .header_left {
@@ -86,6 +97,10 @@
   font-size: 22px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.header_right_icon:nth-child(3) {
+  margin-top: 6px;
 }
 
 .header_barIcon {
