@@ -4,6 +4,7 @@ import { BiLogoGmail } from "react-icons/bi";
 import style from "../footerDetskop/footer.module.scss"; 
 import { useNavigate } from "react-router-dom";
 import data from "../../../json/data.json"
+import Logo from "../../../assets/ChatGPT_Image_Apr_29__2025__07_55_48_PM-removebg-preview.png"
 
 const Footer = () => {
 
@@ -28,15 +29,15 @@ const Footer = () => {
           <div className={style.footer_section}>
             <div className={style.footer_logo}>
               <img
-                src="https://greenshift-road.myshopify.com/cdn/shop/files/GlideX_Logo.svg?v=1709810815&width=263"
+                src={Logo}
                 alt=""
                 className={style.footer_logo_img}
               />
             </div>
             <div className={style.footer_description}>
-              z-Empowered by Innovation
+              SkillUpIT-Empowered by Innovation
             </div>
-          </div>
+          </div> 
 
           <div className={style.footer_links}>
             <h3 className={style.footer_links_title}>Quick Link</h3>
