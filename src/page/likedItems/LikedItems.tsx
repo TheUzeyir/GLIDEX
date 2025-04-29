@@ -17,11 +17,13 @@ const LikedItems = () => {
   const nabivate = useNavigate()
 
   const handleRemove = (id: number) => {
-    dispatch(removeLikedProduct(id)); 
-  }; 
-
-  console.log("Bəyənilmiş məhsul sayı:", likedProducts.length);
-
+    dispatch(removeLikedProduct(id));
+  
+    const storedFavorites: Product[] = JSON.parse(localStorage.getItem("favorites") || "[]");
+    const updatedFavorites = storedFavorites.filter(product => product.id !== id);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  };
+  
 
   return (
     <div className={style.likedItem}>
