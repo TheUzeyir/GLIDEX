@@ -40,28 +40,34 @@ const MainPageProduct = () => {
 
   const addToFavorite = () => {
     if (!user) {
-      window.location.href = "/signIn"; 
+      window.location.href = "/signIn";
       return;
     }
-
+  
     const storedFavorites: LikedProduct[] = JSON.parse(localStorage.getItem("favorites") || "[]");
-
+  
+    const isAlreadyFavorite = storedFavorites.some(fav => fav.id === randomItem.id);
+    if (isAlreadyFavorite) {
+      setShowToast(true);
+      return;
+    }
+  
     const newFavorite: LikedProduct = {
       id: randomItem.id,
       name: randomItem.name,
       image: randomItem.image,
-      price: randomItem.price.toString(),  
+      price: randomItem.price.toString(),
       description: randomItem.description,
       difficultyLevel: randomItem.difficultyLevel,
     };
-
+  
     const updatedFavorites = [...storedFavorites, newFavorite];
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-
+  
     dispatch(addLikedProduct(newFavorite));
-
     setShowToast(true);
   };
+  
 
   useEffect(() => {
     const storedFavorites: LikedProduct[] = JSON.parse(localStorage.getItem("favorites") || "[]");

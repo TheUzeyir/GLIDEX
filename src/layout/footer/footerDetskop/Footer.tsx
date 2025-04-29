@@ -34,7 +34,7 @@ const Footer = () => {
               />
             </div>
             <div className={style.footer_description}>
-              SkillUpIt-Empowered by Innovation
+              z-Empowered by Innovation
             </div>
           </div>
 

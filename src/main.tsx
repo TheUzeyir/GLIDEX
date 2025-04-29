@@ -19,8 +19,8 @@
     <StrictMode>
     <ClerkProvider 
       publishableKey={PUBLISHABLE_KEY}
-      afterSignInUrl="/"     // Girişten sonra ana sayfaya yönlendir
-      afterSignOutUrl="/"    // Çıkıştan sonra ana sayfa
+      afterSignInUrl="/"     
+      afterSignOutUrl="/"   
     >        <Provider store={store}>
           <App />
         </Provider>

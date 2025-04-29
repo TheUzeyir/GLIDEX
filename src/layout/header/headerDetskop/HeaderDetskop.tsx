@@ -11,6 +11,7 @@ import { useUser } from "@clerk/clerk-react";
 import { useSelector } from "react-redux";
 import { selectLikedProducts } from "../../../store/likedSlice";
 import SearchModal from "../searchModal/SearchModal";
+import Logo from "../../../assets/ChatGPT_Image_Apr_29__2025__07_55_48_PM-removebg-preview.png";
 
 const HeaderDetskop = () => { 
   const [isSticky, setIsSticky] = useState(false);
@@ -73,18 +74,18 @@ const HeaderDetskop = () => {
               Information <IoIosArrowDown className={isShopClicked ? style.rotated : ""} />
             </p>
           </div>
-          {/* <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUkyE16XAm5jHDKwksOJ0neG2pOZwTTr4XUA&s"
+          <img
+            src={Logo}
+            onClick={() => handleNavigation('/')} 
             alt="Logo"
             className={style.header_logo}
-          /> */}
-          <h2 className={style.header_logo}>SkillUpIt</h2>
+          />
           <div className={style.header_right}>
             <CiSearch className={style.header_right_icon} onClick={handleSearchToggle} />
             <RxAvatar className={style.header_right_icon} onClick={handleUserIconClick}/>
             <div className={style.header_right_icon} onClick={handleLikedItemsClick}>
               <MdOutlineShoppingBag className={style.header_right_icon} />
-              {likedCount > 0 && (
+              {user && likedCount > 0 && (
                 <span className={style.badge}>{likedCount}</span>
               )}
             </div>

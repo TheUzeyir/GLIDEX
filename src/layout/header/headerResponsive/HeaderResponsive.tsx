@@ -15,6 +15,7 @@ import { CiLogout } from "react-icons/ci";
 import { useSelector } from "react-redux";
 import { selectLikedProducts } from "../../../store/likedSlice";
 import SearchModal from "../searchModal/SearchModal";
+import Logo from "../../../assets/ChatGPT_Image_Apr_29__2025__07_55_48_PM-removebg-preview.png";
 
 const HeaderResponsive = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -90,9 +91,9 @@ const HeaderResponsive = () => {
       <div className={`${style.header_mobile} ${isSticky ? style.sticky : ""}`}>
         <div className="container">
           <img
-            src="https://greenshift-road.myshopify.com/cdn/shop/files/GlideX_Logo.svg?v=1709810815&width=263"
+            src={Logo}
             alt="Logo"
-            className={style.header_logo}
+            className={style.header_logo_res}
             onClick={() => handleNavigation("/")}
             style={{ cursor: "pointer" }} 
           />

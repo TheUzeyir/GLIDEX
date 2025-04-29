@@ -9,16 +9,16 @@ const CircleComponent = () => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const percentage = (scrollTop / maxScroll) * 100;  // Kaydırma ile orantılı olarak hesapla
+      const percentage = (scrollTop / maxScroll) * 100;  
 
-      setScrollPercentage(percentage); // Kaydırma oranını güncelle
+      setScrollPercentage(percentage); 
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const circleLength = 314; // Çevre uzunluğu
+  const circleLength = 314; 
 
   const scrollToTop = () => {
     window.scrollTo({
